@@ -1,0 +1,574 @@
+{
+  "COM:GOLD": {
+    "claims": [
+      "CLM:BLS-2026-03-GOLD-YIELDS",
+      "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+      "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+      "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+      "CLM:FED-2026-03-REALYIELD"
+    ],
+    "documents": [
+      "DOC:BLS-2026-03-CPI",
+      "DOC:CURATED-2026-03-GOLD-MACRO",
+      "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "DOC:FED-2026-03-GUIDANCE"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "COM:SILVER": {
+    "claims": [
+      "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+      "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+      "CLM:SOLAR-2026-03-SILVER-DEMAND"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "DOC:SOLAR-2026-03-SILVER"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "COM:OIL_BRENT": {
+    "claims": [
+      "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+      "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+      "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A",
+      "CLM:OPEC-2026-03-OIL-SUPPLY",
+      "CLM:OPS-2026-03-OIL-FREIGHT"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "DOC:OPEC-2026-03-SUPPLY",
+      "DOC:OPS-2026-03-REDSEA"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "COM:COPPER_CATHODE": {
+    "claims": [
+      "CLM:CHN-2026-03-COPPER-DEMAND",
+      "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+      "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN"
+    ],
+    "documents": [
+      "DOC:CHN-2026-03-PROPERTY",
+      "DOC:CURATED-2026-03-COPPER-CHINA"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "BM:ICE_BRENT": {
+    "claims": [],
+    "documents": [],
+    "observations": [
+      "OBS:PRICE-2026-03-05-ICE_BRENT"
+    ],
+    "events": []
+  },
+  "BM:LME_CU_3M": {
+    "claims": [],
+    "documents": [],
+    "observations": [
+      "OBS:PRICE-2026-03-07-LME_CU_3M"
+    ],
+    "events": []
+  },
+  "BM:XAU_SPOT": {
+    "claims": [],
+    "documents": [],
+    "observations": [
+      "OBS:PRICE-2026-03-11-XAU"
+    ],
+    "events": []
+  },
+  "BM:XAG_SPOT": {
+    "claims": [],
+    "documents": [],
+    "observations": [
+      "OBS:PRICE-2026-03-11-XAG"
+    ],
+    "events": []
+  },
+  "INDIC:US_10Y_REAL_YIELD": {
+    "claims": [
+      "CLM:BLS-2026-03-GOLD-YIELDS",
+      "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+      "CLM:FED-2026-03-REALYIELD"
+    ],
+    "documents": [
+      "DOC:BLS-2026-03-CPI",
+      "DOC:CURATED-2026-03-GOLD-MACRO",
+      "DOC:FED-2026-03-GUIDANCE"
+    ],
+    "observations": [
+      "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD"
+    ],
+    "events": []
+  },
+  "INDIC:FED_FUNDS_RATE": {
+    "claims": [],
+    "documents": [],
+    "observations": [
+      "OBS:INDIC-2026-03-18-FED_FUNDS"
+    ],
+    "events": []
+  },
+  "INDIC:US_CPI_YOY": {
+    "claims": [
+      "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+      "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+      "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-GOLD-MACRO",
+      "DOC:CURATED-2026-03-SILVER-SOLAR"
+    ],
+    "observations": [
+      "OBS:INDIC-2026-03-11-US_CPI_YOY"
+    ],
+    "events": []
+  },
+  "INDIC:DXY": {
+    "claims": [
+      "CLM:BLS-2026-03-GOLD-YIELDS",
+      "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A"
+    ],
+    "documents": [
+      "DOC:BLS-2026-03-CPI",
+      "DOC:CURATED-2026-03-OIL-SUPPLY"
+    ],
+    "observations": [
+      "OBS:INDIC-2026-03-11-DXY"
+    ],
+    "events": []
+  },
+  "INDIC:CHN_PROPERTY_ACTIVITY": {
+    "claims": [
+      "CLM:CHN-2026-03-COPPER-DEMAND",
+      "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE"
+    ],
+    "documents": [
+      "DOC:CHN-2026-03-PROPERTY",
+      "DOC:CURATED-2026-03-COPPER-CHINA"
+    ],
+    "observations": [
+      "OBS:INDIC-2026-03-07-CHN_PROPERTY"
+    ],
+    "events": []
+  },
+  "CTY:USA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CTY:CHN": {
+    "claims": [
+      "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+      "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-COPPER-CHINA"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "CTY:SAU": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CTY:RUS": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CTY:CHL": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CTY:EGY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CO:BHP": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CO:SAUDI_ARAMCO": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "ORG:FED": {
+    "claims": [
+      "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+      "CLM:FED-2026-03-REALYIELD"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-GOLD-MACRO",
+      "DOC:FED-2026-03-GUIDANCE"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "ORG:OPEC": {
+    "claims": [
+      "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+      "CLM:OPEC-2026-03-OIL-SUPPLY"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "DOC:OPEC-2026-03-SUPPLY"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "ORG:IEA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "IND:SOLAR": {
+    "claims": [
+      "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+      "CLM:SOLAR-2026-03-SILVER-DEMAND"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "DOC:SOLAR-2026-03-SILVER"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "IND:EV_BATTERIES": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "IND:CONSTRUCTION": {
+    "claims": [
+      "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+      "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-COPPER-CHINA"
+    ],
+    "observations": [],
+    "events": []
+  },
+  "AS:CHL_ESCONDIDA_MINE": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "AS:EGY_SUEZ_CANAL": {
+    "claims": [
+      "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+      "CLM:OPS-2026-03-OIL-FREIGHT"
+    ],
+    "documents": [
+      "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "DOC:OPS-2026-03-REDSEA"
+    ],
+    "observations": [
+      "OBS:FREIGHT-2026-03-04-REDSEA"
+    ],
+    "events": []
+  },
+  "AS:SAU_CRUDE_EXPORT_SYSTEM": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:RATE_SENSITIVITY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:INFLATION_HEDGE_DEMAND": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:DOLLAR_PRESSURE": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:SUPPLY_SHOCK": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:LOGISTICS_CONSTRAINT": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "MECH:CHINA_DEMAND_SLOWDOWN": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "EV:2026-03-FED-HOLD": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "EV:2026-03-US-COOLER-CPI": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "EV:2026-03-OPEC-CUT-EXTENSION": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "EV:2026-03-RED-SEA-DISRUPTION": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "EV:2026-03-CHINA-PROPERTY-WEAKNESS": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:BLS-2026-03-CPI": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:FED-2026-03-GUIDANCE": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:OPEC-2026-03-SUPPLY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:OPS-2026-03-REDSEA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:CHN-2026-03-PROPERTY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:SOLAR-2026-03-SILVER": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:CURATED-2026-03-GOLD-MACRO": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:CURATED-2026-03-OIL-SUPPLY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:CURATED-2026-03-COPPER-CHINA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "DOC:CURATED-2026-03-SILVER-SOLAR": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:BLS-2026-03-GOLD-YIELDS": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:FED-2026-03-REALYIELD": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:OPEC-2026-03-OIL-SUPPLY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:OPS-2026-03-OIL-FREIGHT": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CHN-2026-03-COPPER-DEMAND": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:SOLAR-2026-03-SILVER-DEMAND": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:PRICE-2026-03-11-XAU": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:PRICE-2026-03-11-XAG": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:PRICE-2026-03-05-ICE_BRENT": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:PRICE-2026-03-07-LME_CU_3M": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:INDIC-2026-03-11-US_CPI_YOY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:INDIC-2026-03-11-DXY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:INDIC-2026-03-18-FED_FUNDS": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:INDIC-2026-03-07-CHN_PROPERTY": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  },
+  "OBS:FREIGHT-2026-03-04-REDSEA": {
+    "claims": [],
+    "documents": [],
+    "observations": [],
+    "events": []
+  }
+}

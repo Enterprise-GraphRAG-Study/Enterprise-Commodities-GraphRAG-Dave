@@ -24,6 +24,7 @@ build/
 Thumbs.db
 .idea/
 .vscode/
+.claude/
 .cursorignore
 .cursorindexingignore
 

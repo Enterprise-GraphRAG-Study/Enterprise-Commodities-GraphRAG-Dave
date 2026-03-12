@@ -62,6 +62,31 @@ Inputs and outputs:
 
 The extractor is intentionally simple and deterministic. It is a starter ingestion path for relationship-bearing text, not a substitute for a full LLM extraction pipeline.
 
+## Week 2 Assignment
+
+The week-2 deliverable is documented in [docs/week2_assignment.md](docs/week2_assignment.md).
+
+Included items:
+
+- domain dataset analysis
+- indexing method design
+- system goal definition
+- a simple indexing prototype over the enriched graph
+
+To build the current JSON index artifacts:
+
+```powershell
+.\venv\Scripts\python.exe scripts\build_indices.py
+```
+
+Generated outputs:
+
+- `artifacts/index/graph_summary.json`
+- `artifacts/index/node_index.json`
+- `artifacts/index/entity_to_evidence.json`
+- `artifacts/index/keyword_inverted_index.json`
+- `artifacts/index/temporal_index.json`
+
 ## Hardware Specs
 
 This repository was benchmarked on the following local machine:

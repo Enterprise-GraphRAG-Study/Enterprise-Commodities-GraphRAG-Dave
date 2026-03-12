@@ -1,0 +1,242 @@
+[
+  {
+    "id": "EV:2026-03-FED-HOLD",
+    "label": "Policy",
+    "name": "Federal Reserve holds policy rate",
+    "timestamp": "2026-03-18T18:00:00Z"
+  },
+  {
+    "id": "DOC:FED-2026-03-GUIDANCE",
+    "label": "Document",
+    "name": "Fed guidance keeps policy restrictive",
+    "timestamp": "2026-03-18T18:00:00Z"
+  },
+  {
+    "id": "CLM:FED-2026-03-REALYIELD",
+    "label": "Claim",
+    "name": "CLM:FED-2026-03-REALYIELD",
+    "timestamp": "2026-03-18T18:00:00Z"
+  },
+  {
+    "id": "OBS:INDIC-2026-03-18-FED_FUNDS",
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-18-FED_FUNDS",
+    "timestamp": "2026-03-18T00:00:00Z"
+  },
+  {
+    "id": "DOC:CURATED-2026-03-GOLD-MACRO",
+    "label": "Document",
+    "name": "Gold gains as CPI cools and real yields retreat",
+    "timestamp": "2026-03-11T13:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+    "timestamp": "2026-03-11T13:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+    "timestamp": "2026-03-11T13:00:00Z"
+  },
+  {
+    "id": "EV:2026-03-US-COOLER-CPI",
+    "label": "Event",
+    "name": "US inflation cools",
+    "timestamp": "2026-03-11T12:30:00Z"
+  },
+  {
+    "id": "DOC:BLS-2026-03-CPI",
+    "label": "Document",
+    "name": "US CPI release points to softer inflation",
+    "timestamp": "2026-03-11T12:30:00Z"
+  },
+  {
+    "id": "CLM:BLS-2026-03-GOLD-YIELDS",
+    "label": "Claim",
+    "name": "CLM:BLS-2026-03-GOLD-YIELDS",
+    "timestamp": "2026-03-11T12:30:00Z"
+  },
+  {
+    "id": "OBS:PRICE-2026-03-11-XAU",
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-11-XAU",
+    "timestamp": "2026-03-11T00:00:00Z"
+  },
+  {
+    "id": "OBS:PRICE-2026-03-11-XAG",
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-11-XAG",
+    "timestamp": "2026-03-11T00:00:00Z"
+  },
+  {
+    "id": "OBS:INDIC-2026-03-11-US_CPI_YOY",
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-US_CPI_YOY",
+    "timestamp": "2026-03-11T00:00:00Z"
+  },
+  {
+    "id": "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD",
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD",
+    "timestamp": "2026-03-11T00:00:00Z"
+  },
+  {
+    "id": "OBS:INDIC-2026-03-11-DXY",
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-DXY",
+    "timestamp": "2026-03-11T00:00:00Z"
+  },
+  {
+    "id": "DOC:CURATED-2026-03-COPPER-CHINA",
+    "label": "Document",
+    "name": "China property weakness weighs on copper demand",
+    "timestamp": "2026-03-07T02:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+    "timestamp": "2026-03-07T02:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN",
+    "timestamp": "2026-03-07T02:00:00Z"
+  },
+  {
+    "id": "EV:2026-03-CHINA-PROPERTY-WEAKNESS",
+    "label": "Event",
+    "name": "China property activity weakens",
+    "timestamp": "2026-03-07T01:00:00Z"
+  },
+  {
+    "id": "DOC:CHN-2026-03-PROPERTY",
+    "label": "Document",
+    "name": "China property slowdown pressures industrial metals",
+    "timestamp": "2026-03-07T01:00:00Z"
+  },
+  {
+    "id": "CLM:CHN-2026-03-COPPER-DEMAND",
+    "label": "Claim",
+    "name": "CLM:CHN-2026-03-COPPER-DEMAND",
+    "timestamp": "2026-03-07T01:00:00Z"
+  },
+  {
+    "id": "OBS:PRICE-2026-03-07-LME_CU_3M",
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-07-LME_CU_3M",
+    "timestamp": "2026-03-07T00:00:00Z"
+  },
+  {
+    "id": "OBS:INDIC-2026-03-07-CHN_PROPERTY",
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-07-CHN_PROPERTY",
+    "timestamp": "2026-03-07T00:00:00Z"
+  },
+  {
+    "id": "DOC:CURATED-2026-03-SILVER-SOLAR",
+    "label": "Document",
+    "name": "Solar manufacturing continues to support silver usage",
+    "timestamp": "2026-03-06T15:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+    "timestamp": "2026-03-06T15:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+    "timestamp": "2026-03-06T15:00:00Z"
+  },
+  {
+    "id": "DOC:SOLAR-2026-03-SILVER",
+    "label": "Document",
+    "name": "Solar manufacturing supports silver demand",
+    "timestamp": "2026-03-06T14:00:00Z"
+  },
+  {
+    "id": "CLM:SOLAR-2026-03-SILVER-DEMAND",
+    "label": "Claim",
+    "name": "CLM:SOLAR-2026-03-SILVER-DEMAND",
+    "timestamp": "2026-03-06T14:00:00Z"
+  },
+  {
+    "id": "DOC:CURATED-2026-03-OIL-SUPPLY",
+    "label": "Document",
+    "name": "OPEC discipline and Red Sea delays tighten oil market",
+    "timestamp": "2026-03-05T11:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+    "timestamp": "2026-03-05T11:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+    "timestamp": "2026-03-05T11:00:00Z"
+  },
+  {
+    "id": "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A",
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A",
+    "timestamp": "2026-03-05T11:00:00Z"
+  },
+  {
+    "id": "EV:2026-03-OPEC-CUT-EXTENSION",
+    "label": "Event",
+    "name": "OPEC extends supply restraint",
+    "timestamp": "2026-03-05T10:00:00Z"
+  },
+  {
+    "id": "DOC:OPEC-2026-03-SUPPLY",
+    "label": "Document",
+    "name": "OPEC supply discipline remains in place",
+    "timestamp": "2026-03-05T10:00:00Z"
+  },
+  {
+    "id": "CLM:OPEC-2026-03-OIL-SUPPLY",
+    "label": "Claim",
+    "name": "CLM:OPEC-2026-03-OIL-SUPPLY",
+    "timestamp": "2026-03-05T10:00:00Z"
+  },
+  {
+    "id": "OBS:PRICE-2026-03-05-ICE_BRENT",
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-05-ICE_BRENT",
+    "timestamp": "2026-03-05T00:00:00Z"
+  },
+  {
+    "id": "DOC:OPS-2026-03-REDSEA",
+    "label": "Document",
+    "name": "Red Sea disruptions lift freight stress",
+    "timestamp": "2026-03-04T08:30:00Z"
+  },
+  {
+    "id": "EV:2026-03-RED-SEA-DISRUPTION",
+    "label": "Event",
+    "name": "Red Sea shipping disruption",
+    "timestamp": "2026-03-04T06:00:00Z"
+  },
+  {
+    "id": "CLM:OPS-2026-03-OIL-FREIGHT",
+    "label": "Claim",
+    "name": "CLM:OPS-2026-03-OIL-FREIGHT",
+    "timestamp": "2026-03-04T06:00:00Z"
+  },
+  {
+    "id": "OBS:FREIGHT-2026-03-04-REDSEA",
+    "label": "Observation",
+    "name": "OBS:FREIGHT-2026-03-04-REDSEA",
+    "timestamp": "2026-03-04T00:00:00Z"
+  }
+]

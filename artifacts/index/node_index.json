@@ -1,0 +1,880 @@
+{
+  "COM:GOLD": {
+    "label": "Commodity",
+    "name": "Gold",
+    "properties": {
+      "id": "COM:GOLD",
+      "name": "Gold",
+      "category": "Precious Metals",
+      "unit_standard": "USD/oz",
+      "description": "Monetary and defensive precious metal sensitive to yields, USD, and inflation expectations."
+    }
+  },
+  "COM:SILVER": {
+    "label": "Commodity",
+    "name": "Silver",
+    "properties": {
+      "id": "COM:SILVER",
+      "name": "Silver",
+      "category": "Precious Metals",
+      "unit_standard": "USD/oz",
+      "description": "Precious and industrial metal with sensitivity to macro conditions and solar demand."
+    }
+  },
+  "COM:OIL_BRENT": {
+    "label": "Commodity",
+    "name": "Brent crude oil",
+    "properties": {
+      "id": "COM:OIL_BRENT",
+      "name": "Brent crude oil",
+      "category": "Energy",
+      "unit_standard": "USD/bbl",
+      "description": "Global seaborne crude benchmark sensitive to supply disruption and shipping risk."
+    }
+  },
+  "COM:COPPER_CATHODE": {
+    "label": "Commodity",
+    "name": "Copper cathode",
+    "properties": {
+      "id": "COM:COPPER_CATHODE",
+      "name": "Copper cathode",
+      "category": "Metals",
+      "unit_standard": "USD/mt",
+      "description": "Industrial metal strongly tied to construction, electrification, and China activity."
+    }
+  },
+  "BM:ICE_BRENT": {
+    "label": "Benchmark",
+    "name": "ICE Brent Front Month",
+    "properties": {
+      "id": "BM:ICE_BRENT",
+      "name": "ICE Brent Front Month",
+      "symbol": "BRN",
+      "exchange": "ICE",
+      "currency": "USD",
+      "unit": "bbl"
+    }
+  },
+  "BM:LME_CU_3M": {
+    "label": "Benchmark",
+    "name": "LME Copper 3M",
+    "properties": {
+      "id": "BM:LME_CU_3M",
+      "name": "LME Copper 3M",
+      "symbol": "LME_CU_3M",
+      "exchange": "LME",
+      "currency": "USD",
+      "unit": "mt"
+    }
+  },
+  "BM:XAU_SPOT": {
+    "label": "Benchmark",
+    "name": "Gold spot",
+    "properties": {
+      "id": "BM:XAU_SPOT",
+      "name": "Gold spot",
+      "symbol": "XAUUSD",
+      "exchange": "OTC",
+      "currency": "USD",
+      "unit": "oz"
+    }
+  },
+  "BM:XAG_SPOT": {
+    "label": "Benchmark",
+    "name": "Silver spot",
+    "properties": {
+      "id": "BM:XAG_SPOT",
+      "name": "Silver spot",
+      "symbol": "XAGUSD",
+      "exchange": "OTC",
+      "currency": "USD",
+      "unit": "oz"
+    }
+  },
+  "INDIC:US_10Y_REAL_YIELD": {
+    "label": "Indicator",
+    "name": "US 10Y real yield",
+    "properties": {
+      "id": "INDIC:US_10Y_REAL_YIELD",
+      "name": "US 10Y real yield",
+      "indicator_type": "RealYield",
+      "unit": "percent",
+      "frequency": "daily",
+      "publisher": "US Treasury derived",
+      "description": "Real yield proxy used to explain precious metals performance."
+    }
+  },
+  "INDIC:FED_FUNDS_RATE": {
+    "label": "Indicator",
+    "name": "Fed funds target upper bound",
+    "properties": {
+      "id": "INDIC:FED_FUNDS_RATE",
+      "name": "Fed funds target upper bound",
+      "indicator_type": "PolicyRate",
+      "unit": "percent",
+      "frequency": "event",
+      "publisher": "Federal Reserve"
+    }
+  },
+  "INDIC:US_CPI_YOY": {
+    "label": "Indicator",
+    "name": "US CPI year over year",
+    "properties": {
+      "id": "INDIC:US_CPI_YOY",
+      "name": "US CPI year over year",
+      "indicator_type": "Inflation",
+      "unit": "percent",
+      "frequency": "monthly",
+      "publisher": "BLS"
+    }
+  },
+  "INDIC:DXY": {
+    "label": "Indicator",
+    "name": "US dollar index",
+    "properties": {
+      "id": "INDIC:DXY",
+      "name": "US dollar index",
+      "indicator_type": "DollarIndex",
+      "unit": "index",
+      "frequency": "daily",
+      "publisher": "ICE"
+    }
+  },
+  "INDIC:CHN_PROPERTY_ACTIVITY": {
+    "label": "Indicator",
+    "name": "China property activity index",
+    "properties": {
+      "id": "INDIC:CHN_PROPERTY_ACTIVITY",
+      "name": "China property activity index",
+      "indicator_type": "Activity",
+      "unit": "index",
+      "frequency": "monthly",
+      "publisher": "Internal composite"
+    }
+  },
+  "CTY:USA": {
+    "label": "Country",
+    "name": "United States",
+    "properties": {
+      "id": "CTY:USA",
+      "name": "United States",
+      "iso_code": "USA",
+      "region": "North America"
+    }
+  },
+  "CTY:CHN": {
+    "label": "Country",
+    "name": "China",
+    "properties": {
+      "id": "CTY:CHN",
+      "name": "China",
+      "iso_code": "CHN",
+      "region": "Asia"
+    }
+  },
+  "CTY:SAU": {
+    "label": "Country",
+    "name": "Saudi Arabia",
+    "properties": {
+      "id": "CTY:SAU",
+      "name": "Saudi Arabia",
+      "iso_code": "SAU",
+      "region": "Middle East"
+    }
+  },
+  "CTY:RUS": {
+    "label": "Country",
+    "name": "Russia",
+    "properties": {
+      "id": "CTY:RUS",
+      "name": "Russia",
+      "iso_code": "RUS",
+      "region": "Europe/Asia"
+    }
+  },
+  "CTY:CHL": {
+    "label": "Country",
+    "name": "Chile",
+    "properties": {
+      "id": "CTY:CHL",
+      "name": "Chile",
+      "iso_code": "CHL",
+      "region": "South America"
+    }
+  },
+  "CTY:EGY": {
+    "label": "Country",
+    "name": "Egypt",
+    "properties": {
+      "id": "CTY:EGY",
+      "name": "Egypt",
+      "iso_code": "EGY",
+      "region": "Middle East/Africa"
+    }
+  },
+  "CO:BHP": {
+    "label": "Company",
+    "name": "BHP",
+    "properties": {
+      "id": "CO:BHP",
+      "name": "BHP",
+      "sector": "Mining"
+    }
+  },
+  "CO:SAUDI_ARAMCO": {
+    "label": "Company",
+    "name": "Saudi Aramco",
+    "properties": {
+      "id": "CO:SAUDI_ARAMCO",
+      "name": "Saudi Aramco",
+      "sector": "Energy"
+    }
+  },
+  "ORG:FED": {
+    "label": "Organization",
+    "name": "Federal Reserve",
+    "properties": {
+      "id": "ORG:FED",
+      "name": "Federal Reserve",
+      "org_type": "CentralBank"
+    }
+  },
+  "ORG:OPEC": {
+    "label": "Organization",
+    "name": "OPEC",
+    "properties": {
+      "id": "ORG:OPEC",
+      "name": "OPEC",
+      "org_type": "ProducerGroup"
+    }
+  },
+  "ORG:IEA": {
+    "label": "Organization",
+    "name": "International Energy Agency",
+    "properties": {
+      "id": "ORG:IEA",
+      "name": "International Energy Agency",
+      "org_type": "Intergovernmental"
+    }
+  },
+  "IND:SOLAR": {
+    "label": "Industry",
+    "name": "Solar manufacturing",
+    "properties": {
+      "id": "IND:SOLAR",
+      "name": "Solar manufacturing"
+    }
+  },
+  "IND:EV_BATTERIES": {
+    "label": "Industry",
+    "name": "EV batteries",
+    "properties": {
+      "id": "IND:EV_BATTERIES",
+      "name": "EV batteries"
+    }
+  },
+  "IND:CONSTRUCTION": {
+    "label": "Industry",
+    "name": "Construction",
+    "properties": {
+      "id": "IND:CONSTRUCTION",
+      "name": "Construction"
+    }
+  },
+  "AS:CHL_ESCONDIDA_MINE": {
+    "label": "Asset",
+    "name": "Escondida mine",
+    "properties": {
+      "id": "AS:CHL_ESCONDIDA_MINE",
+      "name": "Escondida mine",
+      "asset_type": "Mine",
+      "capacity": 1.1,
+      "capacity_unit": "mtpa",
+      "status": "Operating"
+    }
+  },
+  "AS:EGY_SUEZ_CANAL": {
+    "label": "Asset",
+    "name": "Suez Canal",
+    "properties": {
+      "id": "AS:EGY_SUEZ_CANAL",
+      "name": "Suez Canal",
+      "asset_type": "Canal",
+      "status": "Operating"
+    }
+  },
+  "AS:SAU_CRUDE_EXPORT_SYSTEM": {
+    "label": "Asset",
+    "name": "Saudi crude export system",
+    "properties": {
+      "id": "AS:SAU_CRUDE_EXPORT_SYSTEM",
+      "name": "Saudi crude export system",
+      "asset_type": "Port",
+      "status": "Operating"
+    }
+  },
+  "MECH:RATE_SENSITIVITY": {
+    "label": "Mechanism",
+    "name": "Rate sensitivity",
+    "properties": {
+      "id": "MECH:RATE_SENSITIVITY",
+      "name": "Rate sensitivity",
+      "mechanism_type": "DemandShock"
+    }
+  },
+  "MECH:INFLATION_HEDGE_DEMAND": {
+    "label": "Mechanism",
+    "name": "Inflation hedge demand",
+    "properties": {
+      "id": "MECH:INFLATION_HEDGE_DEMAND",
+      "name": "Inflation hedge demand",
+      "mechanism_type": "DemandShock"
+    }
+  },
+  "MECH:DOLLAR_PRESSURE": {
+    "label": "Mechanism",
+    "name": "Dollar pressure",
+    "properties": {
+      "id": "MECH:DOLLAR_PRESSURE",
+      "name": "Dollar pressure",
+      "mechanism_type": "FXPassThrough"
+    }
+  },
+  "MECH:SUPPLY_SHOCK": {
+    "label": "Mechanism",
+    "name": "Supply shock",
+    "properties": {
+      "id": "MECH:SUPPLY_SHOCK",
+      "name": "Supply shock",
+      "mechanism_type": "SupplyShock"
+    }
+  },
+  "MECH:LOGISTICS_CONSTRAINT": {
+    "label": "Mechanism",
+    "name": "Logistics constraint",
+    "properties": {
+      "id": "MECH:LOGISTICS_CONSTRAINT",
+      "name": "Logistics constraint",
+      "mechanism_type": "LogisticsConstraint"
+    }
+  },
+  "MECH:CHINA_DEMAND_SLOWDOWN": {
+    "label": "Mechanism",
+    "name": "China demand slowdown",
+    "properties": {
+      "id": "MECH:CHINA_DEMAND_SLOWDOWN",
+      "name": "China demand slowdown",
+      "mechanism_type": "DemandShock"
+    }
+  },
+  "EV:2026-03-FED-HOLD": {
+    "label": "Policy",
+    "name": "Federal Reserve holds policy rate",
+    "properties": {
+      "id": "EV:2026-03-FED-HOLD",
+      "name": "Federal Reserve holds policy rate",
+      "event_type": "Regulatory",
+      "policy_type": "RateDecision",
+      "start_time": "2026-03-18T18:00:00Z",
+      "severity": 0.44,
+      "confidence": 0.8,
+      "summary": "Federal Reserve maintained restrictive policy guidance, keeping real yields elevated."
+    }
+  },
+  "EV:2026-03-US-COOLER-CPI": {
+    "label": "Event",
+    "name": "US inflation cools",
+    "properties": {
+      "id": "EV:2026-03-US-COOLER-CPI",
+      "name": "US inflation cools",
+      "event_type": "Macroeconomic",
+      "start_time": "2026-03-11T12:30:00Z",
+      "severity": 0.52,
+      "confidence": 0.84,
+      "summary": "Softer CPI data reduced real-yield pressure and supported precious metals sentiment."
+    }
+  },
+  "EV:2026-03-OPEC-CUT-EXTENSION": {
+    "label": "Event",
+    "name": "OPEC extends supply restraint",
+    "properties": {
+      "id": "EV:2026-03-OPEC-CUT-EXTENSION",
+      "name": "OPEC extends supply restraint",
+      "event_type": "Regulatory",
+      "start_time": "2026-03-05T10:00:00Z",
+      "severity": 0.66,
+      "confidence": 0.83,
+      "summary": "OPEC maintained production discipline, tightening expectations for near-term oil balances."
+    }
+  },
+  "EV:2026-03-RED-SEA-DISRUPTION": {
+    "label": "Event",
+    "name": "Red Sea shipping disruption",
+    "properties": {
+      "id": "EV:2026-03-RED-SEA-DISRUPTION",
+      "name": "Red Sea shipping disruption",
+      "event_type": "Logistics",
+      "start_time": "2026-03-04T06:00:00Z",
+      "severity": 0.63,
+      "confidence": 0.78,
+      "summary": "Shipping delays increased voyage risk and freight costs for crude cargoes."
+    }
+  },
+  "EV:2026-03-CHINA-PROPERTY-WEAKNESS": {
+    "label": "Event",
+    "name": "China property activity weakens",
+    "properties": {
+      "id": "EV:2026-03-CHINA-PROPERTY-WEAKNESS",
+      "name": "China property activity weakens",
+      "event_type": "Macroeconomic",
+      "start_time": "2026-03-07T01:00:00Z",
+      "severity": 0.61,
+      "confidence": 0.79,
+      "summary": "Slower Chinese property activity weighed on copper demand expectations."
+    }
+  },
+  "DOC:BLS-2026-03-CPI": {
+    "label": "Document",
+    "name": "US CPI release points to softer inflation",
+    "properties": {
+      "id": "DOC:BLS-2026-03-CPI",
+      "doc_type": "release",
+      "title": "US CPI release points to softer inflation",
+      "publisher": "BLS summary",
+      "published_at": "2026-03-11T12:30:00Z",
+      "url": "internal://bls/2026-03-cpi",
+      "summary": "Inflation release used to link CPI, real yields, USD, and precious metals."
+    }
+  },
+  "DOC:FED-2026-03-GUIDANCE": {
+    "label": "Document",
+    "name": "Fed guidance keeps policy restrictive",
+    "properties": {
+      "id": "DOC:FED-2026-03-GUIDANCE",
+      "doc_type": "statement",
+      "title": "Fed guidance keeps policy restrictive",
+      "publisher": "Federal Reserve",
+      "published_at": "2026-03-18T18:00:00Z",
+      "url": "internal://fed/2026-03-guidance",
+      "summary": "Policy statement framing rates as restrictive for longer."
+    }
+  },
+  "DOC:OPEC-2026-03-SUPPLY": {
+    "label": "Document",
+    "name": "OPEC supply discipline remains in place",
+    "properties": {
+      "id": "DOC:OPEC-2026-03-SUPPLY",
+      "doc_type": "report",
+      "title": "OPEC supply discipline remains in place",
+      "publisher": "OPEC monitor",
+      "published_at": "2026-03-05T10:00:00Z",
+      "url": "internal://opec/2026-03-supply",
+      "summary": "Note on extended supply restraint and tighter crude balances."
+    }
+  },
+  "DOC:OPS-2026-03-REDSEA": {
+    "label": "Document",
+    "name": "Red Sea disruptions lift freight stress",
+    "properties": {
+      "id": "DOC:OPS-2026-03-REDSEA",
+      "doc_type": "report",
+      "title": "Red Sea disruptions lift freight stress",
+      "publisher": "Internal Ops Desk",
+      "published_at": "2026-03-04T08:30:00Z",
+      "url": "internal://ops/2026-03-redsea",
+      "summary": "Freight and routing update on shipping disruptions affecting energy cargoes."
+    }
+  },
+  "DOC:CHN-2026-03-PROPERTY": {
+    "label": "Document",
+    "name": "China property slowdown pressures industrial metals",
+    "properties": {
+      "id": "DOC:CHN-2026-03-PROPERTY",
+      "doc_type": "report",
+      "title": "China property slowdown pressures industrial metals",
+      "publisher": "Internal Macro Desk",
+      "published_at": "2026-03-07T01:00:00Z",
+      "url": "internal://macro/2026-03-china-property",
+      "summary": "China activity note connecting weaker property demand to copper expectations."
+    }
+  },
+  "DOC:SOLAR-2026-03-SILVER": {
+    "label": "Document",
+    "name": "Solar manufacturing supports silver demand",
+    "properties": {
+      "id": "DOC:SOLAR-2026-03-SILVER",
+      "doc_type": "note",
+      "title": "Solar manufacturing supports silver demand",
+      "publisher": "Internal Metals Desk",
+      "published_at": "2026-03-06T14:00:00Z",
+      "url": "internal://metals/2026-03-solar-silver",
+      "summary": "Demand note linking solar manufacturing growth to silver usage."
+    }
+  },
+  "DOC:CURATED-2026-03-GOLD-MACRO": {
+    "label": "Document",
+    "name": "Gold gains as CPI cools and real yields retreat",
+    "properties": {
+      "id": "DOC:CURATED-2026-03-GOLD-MACRO",
+      "doc_type": "note",
+      "title": "Gold gains as CPI cools and real yields retreat",
+      "publisher": "Curated Macro Desk",
+      "published_at": "2026-03-11T13:00:00Z",
+      "url": "internal://curated/2026-03-gold-macro",
+      "summary": "Curated note linking CPI, real yields, USD, and gold."
+    }
+  },
+  "DOC:CURATED-2026-03-OIL-SUPPLY": {
+    "label": "Document",
+    "name": "OPEC discipline and Red Sea delays tighten oil market",
+    "properties": {
+      "id": "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "doc_type": "note",
+      "title": "OPEC discipline and Red Sea delays tighten oil market",
+      "publisher": "Curated Energy Desk",
+      "published_at": "2026-03-05T11:00:00Z",
+      "url": "internal://curated/2026-03-oil-supply",
+      "summary": "Curated note on oil supply and logistics."
+    }
+  },
+  "DOC:CURATED-2026-03-COPPER-CHINA": {
+    "label": "Document",
+    "name": "China property weakness weighs on copper demand",
+    "properties": {
+      "id": "DOC:CURATED-2026-03-COPPER-CHINA",
+      "doc_type": "note",
+      "title": "China property weakness weighs on copper demand",
+      "publisher": "Curated Metals Desk",
+      "published_at": "2026-03-07T02:00:00Z",
+      "url": "internal://curated/2026-03-copper-china",
+      "summary": "Curated note on China demand transmission into copper."
+    }
+  },
+  "DOC:CURATED-2026-03-SILVER-SOLAR": {
+    "label": "Document",
+    "name": "Solar manufacturing continues to support silver usage",
+    "properties": {
+      "id": "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "doc_type": "note",
+      "title": "Solar manufacturing continues to support silver usage",
+      "publisher": "Curated Metals Desk",
+      "published_at": "2026-03-06T15:00:00Z",
+      "url": "internal://curated/2026-03-silver-solar",
+      "summary": "Curated note on silver's industrial demand channel."
+    }
+  },
+  "CLM:BLS-2026-03-GOLD-YIELDS": {
+    "label": "Claim",
+    "name": "CLM:BLS-2026-03-GOLD-YIELDS",
+    "properties": {
+      "id": "CLM:BLS-2026-03-GOLD-YIELDS",
+      "claim_type": "price_explanation",
+      "text": "Gold strengthened as softer CPI reduced upward pressure on real yields and the dollar.",
+      "confidence": 0.84,
+      "source_id": "DOC:BLS-2026-03-CPI",
+      "start_time": "2026-03-11T12:30:00Z"
+    }
+  },
+  "CLM:FED-2026-03-REALYIELD": {
+    "label": "Claim",
+    "name": "CLM:FED-2026-03-REALYIELD",
+    "properties": {
+      "id": "CLM:FED-2026-03-REALYIELD",
+      "claim_type": "policy",
+      "text": "Restrictive Fed guidance kept real yields elevated, limiting upside for non-yielding metals.",
+      "confidence": 0.8,
+      "source_id": "DOC:FED-2026-03-GUIDANCE",
+      "start_time": "2026-03-18T18:00:00Z"
+    }
+  },
+  "CLM:OPEC-2026-03-OIL-SUPPLY": {
+    "label": "Claim",
+    "name": "CLM:OPEC-2026-03-OIL-SUPPLY",
+    "properties": {
+      "id": "CLM:OPEC-2026-03-OIL-SUPPLY",
+      "claim_type": "supply_change",
+      "text": "Extended OPEC supply restraint tightened expected oil availability.",
+      "confidence": 0.83,
+      "source_id": "DOC:OPEC-2026-03-SUPPLY",
+      "start_time": "2026-03-05T10:00:00Z"
+    }
+  },
+  "CLM:OPS-2026-03-OIL-FREIGHT": {
+    "label": "Claim",
+    "name": "CLM:OPS-2026-03-OIL-FREIGHT",
+    "properties": {
+      "id": "CLM:OPS-2026-03-OIL-FREIGHT",
+      "claim_type": "shipment_delay",
+      "text": "Red Sea shipping disruption increased freight risk for oil cargoes.",
+      "confidence": 0.78,
+      "source_id": "DOC:OPS-2026-03-REDSEA",
+      "start_time": "2026-03-04T06:00:00Z"
+    }
+  },
+  "CLM:CHN-2026-03-COPPER-DEMAND": {
+    "label": "Claim",
+    "name": "CLM:CHN-2026-03-COPPER-DEMAND",
+    "properties": {
+      "id": "CLM:CHN-2026-03-COPPER-DEMAND",
+      "claim_type": "demand_change",
+      "text": "Weaker China property activity reduced expected copper demand growth.",
+      "confidence": 0.79,
+      "source_id": "DOC:CHN-2026-03-PROPERTY",
+      "start_time": "2026-03-07T01:00:00Z"
+    }
+  },
+  "CLM:SOLAR-2026-03-SILVER-DEMAND": {
+    "label": "Claim",
+    "name": "CLM:SOLAR-2026-03-SILVER-DEMAND",
+    "properties": {
+      "id": "CLM:SOLAR-2026-03-SILVER-DEMAND",
+      "claim_type": "demand_change",
+      "text": "Solar manufacturing growth increased structural silver demand.",
+      "confidence": 0.76,
+      "source_id": "DOC:SOLAR-2026-03-SILVER",
+      "start_time": "2026-03-06T14:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE",
+      "claim_type": "price_explanation",
+      "text": "Gold gained after CPI eased and real yields moved lower.",
+      "confidence": 0.74,
+      "source_id": "DOC:CURATED-2026-03-GOLD-MACRO",
+      "start_time": "2026-03-11T13:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA",
+      "claim_type": "price_explanation",
+      "text": "Fed guidance remains restrictive, but markets read the inflation data as reducing near-term yield pressure on gold.",
+      "confidence": 0.74,
+      "source_id": "DOC:CURATED-2026-03-GOLD-MACRO",
+      "start_time": "2026-03-11T13:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN",
+      "claim_type": "supply_change",
+      "text": "OPEC maintained supply restraint, tightening Brent availability.",
+      "confidence": 0.8,
+      "source_id": "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "start_time": "2026-03-05T11:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES",
+      "claim_type": "shipment_delay",
+      "text": "Red Sea shipping disruption lifted freight stress and delayed crude cargoes through the Suez Canal.",
+      "confidence": 0.77,
+      "source_id": "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "start_time": "2026-03-05T11:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A",
+      "claim_type": "price_explanation",
+      "text": "A firmer dollar capped some upside in oil even as physical supply stayed tight.",
+      "confidence": 0.74,
+      "source_id": "DOC:CURATED-2026-03-OIL-SUPPLY",
+      "start_time": "2026-03-05T11:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE",
+      "claim_type": "price_explanation",
+      "text": "Copper weakened as China property activity slowed.",
+      "confidence": 0.74,
+      "source_id": "DOC:CURATED-2026-03-COPPER-CHINA",
+      "start_time": "2026-03-07T02:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN",
+      "claim_type": "demand_change",
+      "text": "Slower Chinese construction demand reduced demand for copper.",
+      "confidence": 0.76,
+      "source_id": "DOC:CURATED-2026-03-COPPER-CHINA",
+      "start_time": "2026-03-07T02:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER",
+      "claim_type": "demand_change",
+      "text": "Solar manufacturing increased demand for silver.",
+      "confidence": 0.76,
+      "source_id": "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "start_time": "2026-03-06T15:00:00Z"
+    }
+  },
+  "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_": {
+    "label": "Claim",
+    "name": "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+    "properties": {
+      "id": "CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_",
+      "claim_type": "price_explanation",
+      "text": "Silver also tracked gold higher after inflation softened.",
+      "confidence": 0.74,
+      "source_id": "DOC:CURATED-2026-03-SILVER-SOLAR",
+      "start_time": "2026-03-06T15:00:00Z"
+    }
+  },
+  "OBS:PRICE-2026-03-11-XAU": {
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-11-XAU",
+    "properties": {
+      "id": "OBS:PRICE-2026-03-11-XAU",
+      "metric_type": "Price",
+      "value": 2184.0,
+      "unit": "USD/oz",
+      "currency": "USD",
+      "as_of": "2026-03-11T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:BLS-2026-03-CPI"
+    }
+  },
+  "OBS:PRICE-2026-03-11-XAG": {
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-11-XAG",
+    "properties": {
+      "id": "OBS:PRICE-2026-03-11-XAG",
+      "metric_type": "Price",
+      "value": 24.6,
+      "unit": "USD/oz",
+      "currency": "USD",
+      "as_of": "2026-03-11T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:SOLAR-2026-03-SILVER"
+    }
+  },
+  "OBS:PRICE-2026-03-05-ICE_BRENT": {
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-05-ICE_BRENT",
+    "properties": {
+      "id": "OBS:PRICE-2026-03-05-ICE_BRENT",
+      "metric_type": "Price",
+      "value": 84.9,
+      "unit": "USD/bbl",
+      "currency": "USD",
+      "as_of": "2026-03-05T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:OPEC-2026-03-SUPPLY"
+    }
+  },
+  "OBS:PRICE-2026-03-07-LME_CU_3M": {
+    "label": "Observation",
+    "name": "OBS:PRICE-2026-03-07-LME_CU_3M",
+    "properties": {
+      "id": "OBS:PRICE-2026-03-07-LME_CU_3M",
+      "metric_type": "Price",
+      "value": 8715.0,
+      "unit": "USD/mt",
+      "currency": "USD",
+      "as_of": "2026-03-07T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:CHN-2026-03-PROPERTY"
+    }
+  },
+  "OBS:INDIC-2026-03-11-US_CPI_YOY": {
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-US_CPI_YOY",
+    "properties": {
+      "id": "OBS:INDIC-2026-03-11-US_CPI_YOY",
+      "metric_type": "Inflation",
+      "value": 2.9,
+      "unit": "percent",
+      "as_of": "2026-03-11T00:00:00Z",
+      "granularity": "monthly",
+      "source_id": "DOC:BLS-2026-03-CPI"
+    }
+  },
+  "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD": {
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD",
+    "properties": {
+      "id": "OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD",
+      "metric_type": "RealYield",
+      "value": 1.62,
+      "unit": "percent",
+      "as_of": "2026-03-11T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:BLS-2026-03-CPI"
+    }
+  },
+  "OBS:INDIC-2026-03-11-DXY": {
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-11-DXY",
+    "properties": {
+      "id": "OBS:INDIC-2026-03-11-DXY",
+      "metric_type": "FX",
+      "value": 103.4,
+      "unit": "index",
+      "as_of": "2026-03-11T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:BLS-2026-03-CPI"
+    }
+  },
+  "OBS:INDIC-2026-03-18-FED_FUNDS": {
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-18-FED_FUNDS",
+    "properties": {
+      "id": "OBS:INDIC-2026-03-18-FED_FUNDS",
+      "metric_type": "InterestRate",
+      "value": 5.5,
+      "unit": "percent",
+      "as_of": "2026-03-18T00:00:00Z",
+      "granularity": "event",
+      "source_id": "DOC:FED-2026-03-GUIDANCE"
+    }
+  },
+  "OBS:INDIC-2026-03-07-CHN_PROPERTY": {
+    "label": "Observation",
+    "name": "OBS:INDIC-2026-03-07-CHN_PROPERTY",
+    "properties": {
+      "id": "OBS:INDIC-2026-03-07-CHN_PROPERTY",
+      "metric_type": "PMI",
+      "value": 47.8,
+      "unit": "index",
+      "as_of": "2026-03-07T00:00:00Z",
+      "granularity": "monthly",
+      "source_id": "DOC:CHN-2026-03-PROPERTY"
+    }
+  },
+  "OBS:FREIGHT-2026-03-04-REDSEA": {
+    "label": "Observation",
+    "name": "OBS:FREIGHT-2026-03-04-REDSEA",
+    "properties": {
+      "id": "OBS:FREIGHT-2026-03-04-REDSEA",
+      "metric_type": "FreightRate",
+      "value": 1.19,
+      "unit": "index_ratio",
+      "as_of": "2026-03-04T00:00:00Z",
+      "granularity": "daily",
+      "source_id": "DOC:OPS-2026-03-REDSEA"
+    }
+  }
+}
