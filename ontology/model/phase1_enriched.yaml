@@ -1,0 +1,986 @@
+metadata:
+  dataset_id: phase1-macro-commodities
+  version: 2
+  as_of: 2026-03-12
+  description: 'Starter commodity intelligence graph centered on gold, silver, Brent
+    crude, copper, macro indicators, Fed policy, OPEC supply actions, and explanatory
+    events.
+
+    '
+  derived_claim_pack: curated-macro-commodity-docs
+nodes:
+  Commodity:
+  - id: COM:GOLD
+    name: Gold
+    category: Precious Metals
+    unit_standard: USD/oz
+    description: Monetary and defensive precious metal sensitive to yields, USD, and
+      inflation expectations.
+  - id: COM:SILVER
+    name: Silver
+    category: Precious Metals
+    unit_standard: USD/oz
+    description: Precious and industrial metal with sensitivity to macro conditions
+      and solar demand.
+  - id: COM:OIL_BRENT
+    name: Brent crude oil
+    category: Energy
+    unit_standard: USD/bbl
+    description: Global seaborne crude benchmark sensitive to supply disruption and
+      shipping risk.
+  - id: COM:COPPER_CATHODE
+    name: Copper cathode
+    category: Metals
+    unit_standard: USD/mt
+    description: Industrial metal strongly tied to construction, electrification,
+      and China activity.
+  Benchmark:
+  - id: BM:ICE_BRENT
+    name: ICE Brent Front Month
+    symbol: BRN
+    exchange: ICE
+    currency: USD
+    unit: bbl
+  - id: BM:LME_CU_3M
+    name: LME Copper 3M
+    symbol: LME_CU_3M
+    exchange: LME
+    currency: USD
+    unit: mt
+  - id: BM:XAU_SPOT
+    name: Gold spot
+    symbol: XAUUSD
+    exchange: OTC
+    currency: USD
+    unit: oz
+  - id: BM:XAG_SPOT
+    name: Silver spot
+    symbol: XAGUSD
+    exchange: OTC
+    currency: USD
+    unit: oz
+  Indicator:
+  - id: INDIC:US_10Y_REAL_YIELD
+    name: US 10Y real yield
+    indicator_type: RealYield
+    unit: percent
+    frequency: daily
+    publisher: US Treasury derived
+    description: Real yield proxy used to explain precious metals performance.
+  - id: INDIC:FED_FUNDS_RATE
+    name: Fed funds target upper bound
+    indicator_type: PolicyRate
+    unit: percent
+    frequency: event
+    publisher: Federal Reserve
+  - id: INDIC:US_CPI_YOY
+    name: US CPI year over year
+    indicator_type: Inflation
+    unit: percent
+    frequency: monthly
+    publisher: BLS
+  - id: INDIC:DXY
+    name: US dollar index
+    indicator_type: DollarIndex
+    unit: index
+    frequency: daily
+    publisher: ICE
+  - id: INDIC:CHN_PROPERTY_ACTIVITY
+    name: China property activity index
+    indicator_type: Activity
+    unit: index
+    frequency: monthly
+    publisher: Internal composite
+  Country:
+  - id: CTY:USA
+    name: United States
+    iso_code: USA
+    region: North America
+  - id: CTY:CHN
+    name: China
+    iso_code: CHN
+    region: Asia
+  - id: CTY:SAU
+    name: Saudi Arabia
+    iso_code: SAU
+    region: Middle East
+  - id: CTY:RUS
+    name: Russia
+    iso_code: RUS
+    region: Europe/Asia
+  - id: CTY:CHL
+    name: Chile
+    iso_code: CHL
+    region: South America
+  - id: CTY:EGY
+    name: Egypt
+    iso_code: EGY
+    region: Middle East/Africa
+  Company:
+  - id: CO:BHP
+    name: BHP
+    sector: Mining
+  - id: CO:SAUDI_ARAMCO
+    name: Saudi Aramco
+    sector: Energy
+  Organization:
+  - id: ORG:FED
+    name: Federal Reserve
+    org_type: CentralBank
+  - id: ORG:OPEC
+    name: OPEC
+    org_type: ProducerGroup
+  - id: ORG:IEA
+    name: International Energy Agency
+    org_type: Intergovernmental
+  Industry:
+  - id: IND:SOLAR
+    name: Solar manufacturing
+  - id: IND:EV_BATTERIES
+    name: EV batteries
+  - id: IND:CONSTRUCTION
+    name: Construction
+  Asset:
+  - id: AS:CHL_ESCONDIDA_MINE
+    name: Escondida mine
+    asset_type: Mine
+    capacity: 1.1
+    capacity_unit: mtpa
+    status: Operating
+  - id: AS:EGY_SUEZ_CANAL
+    name: Suez Canal
+    asset_type: Canal
+    status: Operating
+  - id: AS:SAU_CRUDE_EXPORT_SYSTEM
+    name: Saudi crude export system
+    asset_type: Port
+    status: Operating
+  Mechanism:
+  - id: MECH:RATE_SENSITIVITY
+    name: Rate sensitivity
+    mechanism_type: DemandShock
+  - id: MECH:INFLATION_HEDGE_DEMAND
+    name: Inflation hedge demand
+    mechanism_type: DemandShock
+  - id: MECH:DOLLAR_PRESSURE
+    name: Dollar pressure
+    mechanism_type: FXPassThrough
+  - id: MECH:SUPPLY_SHOCK
+    name: Supply shock
+    mechanism_type: SupplyShock
+  - id: MECH:LOGISTICS_CONSTRAINT
+    name: Logistics constraint
+    mechanism_type: LogisticsConstraint
+  - id: MECH:CHINA_DEMAND_SLOWDOWN
+    name: China demand slowdown
+    mechanism_type: DemandShock
+  Policy:
+  - id: EV:2026-03-FED-HOLD
+    name: Federal Reserve holds policy rate
+    event_type: Regulatory
+    policy_type: RateDecision
+    start_time: 2026-03-18 18:00:00+00:00
+    severity: 0.44
+    confidence: 0.8
+    summary: Federal Reserve maintained restrictive policy guidance, keeping real
+      yields elevated.
+  Event:
+  - id: EV:2026-03-US-COOLER-CPI
+    name: US inflation cools
+    event_type: Macroeconomic
+    start_time: 2026-03-11 12:30:00+00:00
+    severity: 0.52
+    confidence: 0.84
+    summary: Softer CPI data reduced real-yield pressure and supported precious metals
+      sentiment.
+  - id: EV:2026-03-OPEC-CUT-EXTENSION
+    name: OPEC extends supply restraint
+    event_type: Regulatory
+    start_time: 2026-03-05 10:00:00+00:00
+    severity: 0.66
+    confidence: 0.83
+    summary: OPEC maintained production discipline, tightening expectations for near-term
+      oil balances.
+  - id: EV:2026-03-RED-SEA-DISRUPTION
+    name: Red Sea shipping disruption
+    event_type: Logistics
+    start_time: 2026-03-04 06:00:00+00:00
+    severity: 0.63
+    confidence: 0.78
+    summary: Shipping delays increased voyage risk and freight costs for crude cargoes.
+  - id: EV:2026-03-CHINA-PROPERTY-WEAKNESS
+    name: China property activity weakens
+    event_type: Macroeconomic
+    start_time: 2026-03-07 01:00:00+00:00
+    severity: 0.61
+    confidence: 0.79
+    summary: Slower Chinese property activity weighed on copper demand expectations.
+  Document:
+  - id: DOC:BLS-2026-03-CPI
+    doc_type: release
+    title: US CPI release points to softer inflation
+    publisher: BLS summary
+    published_at: 2026-03-11 12:30:00+00:00
+    url: internal://bls/2026-03-cpi
+    summary: Inflation release used to link CPI, real yields, USD, and precious metals.
+  - id: DOC:FED-2026-03-GUIDANCE
+    doc_type: statement
+    title: Fed guidance keeps policy restrictive
+    publisher: Federal Reserve
+    published_at: 2026-03-18 18:00:00+00:00
+    url: internal://fed/2026-03-guidance
+    summary: Policy statement framing rates as restrictive for longer.
+  - id: DOC:OPEC-2026-03-SUPPLY
+    doc_type: report
+    title: OPEC supply discipline remains in place
+    publisher: OPEC monitor
+    published_at: 2026-03-05 10:00:00+00:00
+    url: internal://opec/2026-03-supply
+    summary: Note on extended supply restraint and tighter crude balances.
+  - id: DOC:OPS-2026-03-REDSEA
+    doc_type: report
+    title: Red Sea disruptions lift freight stress
+    publisher: Internal Ops Desk
+    published_at: 2026-03-04 08:30:00+00:00
+    url: internal://ops/2026-03-redsea
+    summary: Freight and routing update on shipping disruptions affecting energy cargoes.
+  - id: DOC:CHN-2026-03-PROPERTY
+    doc_type: report
+    title: China property slowdown pressures industrial metals
+    publisher: Internal Macro Desk
+    published_at: 2026-03-07 01:00:00+00:00
+    url: internal://macro/2026-03-china-property
+    summary: China activity note connecting weaker property demand to copper expectations.
+  - id: DOC:SOLAR-2026-03-SILVER
+    doc_type: note
+    title: Solar manufacturing supports silver demand
+    publisher: Internal Metals Desk
+    published_at: 2026-03-06 14:00:00+00:00
+    url: internal://metals/2026-03-solar-silver
+    summary: Demand note linking solar manufacturing growth to silver usage.
+  - id: DOC:CURATED-2026-03-GOLD-MACRO
+    doc_type: note
+    title: Gold gains as CPI cools and real yields retreat
+    publisher: Curated Macro Desk
+    published_at: &id001 2026-03-11 13:00:00+00:00
+    url: internal://curated/2026-03-gold-macro
+    summary: Curated note linking CPI, real yields, USD, and gold.
+  - id: DOC:CURATED-2026-03-OIL-SUPPLY
+    doc_type: note
+    title: OPEC discipline and Red Sea delays tighten oil market
+    publisher: Curated Energy Desk
+    published_at: &id002 2026-03-05 11:00:00+00:00
+    url: internal://curated/2026-03-oil-supply
+    summary: Curated note on oil supply and logistics.
+  - id: DOC:CURATED-2026-03-COPPER-CHINA
+    doc_type: note
+    title: China property weakness weighs on copper demand
+    publisher: Curated Metals Desk
+    published_at: &id003 2026-03-07 02:00:00+00:00
+    url: internal://curated/2026-03-copper-china
+    summary: Curated note on China demand transmission into copper.
+  - id: DOC:CURATED-2026-03-SILVER-SOLAR
+    doc_type: note
+    title: Solar manufacturing continues to support silver usage
+    publisher: Curated Metals Desk
+    published_at: &id004 2026-03-06 15:00:00+00:00
+    url: internal://curated/2026-03-silver-solar
+    summary: Curated note on silver's industrial demand channel.
+  Claim:
+  - id: CLM:BLS-2026-03-GOLD-YIELDS
+    claim_type: price_explanation
+    text: Gold strengthened as softer CPI reduced upward pressure on real yields and
+      the dollar.
+    confidence: 0.84
+    source_id: DOC:BLS-2026-03-CPI
+    start_time: 2026-03-11 12:30:00+00:00
+  - id: CLM:FED-2026-03-REALYIELD
+    claim_type: policy
+    text: Restrictive Fed guidance kept real yields elevated, limiting upside for
+      non-yielding metals.
+    confidence: 0.8
+    source_id: DOC:FED-2026-03-GUIDANCE
+    start_time: 2026-03-18 18:00:00+00:00
+  - id: CLM:OPEC-2026-03-OIL-SUPPLY
+    claim_type: supply_change
+    text: Extended OPEC supply restraint tightened expected oil availability.
+    confidence: 0.83
+    source_id: DOC:OPEC-2026-03-SUPPLY
+    start_time: 2026-03-05 10:00:00+00:00
+  - id: CLM:OPS-2026-03-OIL-FREIGHT
+    claim_type: shipment_delay
+    text: Red Sea shipping disruption increased freight risk for oil cargoes.
+    confidence: 0.78
+    source_id: DOC:OPS-2026-03-REDSEA
+    start_time: 2026-03-04 06:00:00+00:00
+  - id: CLM:CHN-2026-03-COPPER-DEMAND
+    claim_type: demand_change
+    text: Weaker China property activity reduced expected copper demand growth.
+    confidence: 0.79
+    source_id: DOC:CHN-2026-03-PROPERTY
+    start_time: 2026-03-07 01:00:00+00:00
+  - id: CLM:SOLAR-2026-03-SILVER-DEMAND
+    claim_type: demand_change
+    text: Solar manufacturing growth increased structural silver demand.
+    confidence: 0.76
+    source_id: DOC:SOLAR-2026-03-SILVER
+    start_time: 2026-03-06 14:00:00+00:00
+  - id: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+    claim_type: price_explanation
+    text: Gold gained after CPI eased and real yields moved lower.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-GOLD-MACRO
+    start_time: *id001
+  - id: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+    claim_type: price_explanation
+    text: Fed guidance remains restrictive, but markets read the inflation data as
+      reducing near-term yield pressure on gold.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-GOLD-MACRO
+    start_time: *id001
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+    claim_type: supply_change
+    text: OPEC maintained supply restraint, tightening Brent availability.
+    confidence: 0.8
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+    claim_type: shipment_delay
+    text: Red Sea shipping disruption lifted freight stress and delayed crude cargoes
+      through the Suez Canal.
+    confidence: 0.77
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+    claim_type: price_explanation
+    text: A firmer dollar capped some upside in oil even as physical supply stayed
+      tight.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+    claim_type: price_explanation
+    text: Copper weakened as China property activity slowed.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-COPPER-CHINA
+    start_time: *id003
+  - id: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+    claim_type: demand_change
+    text: Slower Chinese construction demand reduced demand for copper.
+    confidence: 0.76
+    source_id: DOC:CURATED-2026-03-COPPER-CHINA
+    start_time: *id003
+  - id: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+    claim_type: demand_change
+    text: Solar manufacturing increased demand for silver.
+    confidence: 0.76
+    source_id: DOC:CURATED-2026-03-SILVER-SOLAR
+    start_time: *id004
+  - id: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+    claim_type: price_explanation
+    text: Silver also tracked gold higher after inflation softened.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-SILVER-SOLAR
+    start_time: *id004
+  Observation:
+  - id: OBS:PRICE-2026-03-11-XAU
+    metric_type: Price
+    value: 2184.0
+    unit: USD/oz
+    currency: USD
+    as_of: 2026-03-11 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:BLS-2026-03-CPI
+  - id: OBS:PRICE-2026-03-11-XAG
+    metric_type: Price
+    value: 24.6
+    unit: USD/oz
+    currency: USD
+    as_of: 2026-03-11 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:SOLAR-2026-03-SILVER
+  - id: OBS:PRICE-2026-03-05-ICE_BRENT
+    metric_type: Price
+    value: 84.9
+    unit: USD/bbl
+    currency: USD
+    as_of: 2026-03-05 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:OPEC-2026-03-SUPPLY
+  - id: OBS:PRICE-2026-03-07-LME_CU_3M
+    metric_type: Price
+    value: 8715.0
+    unit: USD/mt
+    currency: USD
+    as_of: 2026-03-07 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:CHN-2026-03-PROPERTY
+  - id: OBS:INDIC-2026-03-11-US_CPI_YOY
+    metric_type: Inflation
+    value: 2.9
+    unit: percent
+    as_of: 2026-03-11 00:00:00+00:00
+    granularity: monthly
+    source_id: DOC:BLS-2026-03-CPI
+  - id: OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD
+    metric_type: RealYield
+    value: 1.62
+    unit: percent
+    as_of: 2026-03-11 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:BLS-2026-03-CPI
+  - id: OBS:INDIC-2026-03-11-DXY
+    metric_type: FX
+    value: 103.4
+    unit: index
+    as_of: 2026-03-11 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:BLS-2026-03-CPI
+  - id: OBS:INDIC-2026-03-18-FED_FUNDS
+    metric_type: InterestRate
+    value: 5.5
+    unit: percent
+    as_of: 2026-03-18 00:00:00+00:00
+    granularity: event
+    source_id: DOC:FED-2026-03-GUIDANCE
+  - id: OBS:INDIC-2026-03-07-CHN_PROPERTY
+    metric_type: PMI
+    value: 47.8
+    unit: index
+    as_of: 2026-03-07 00:00:00+00:00
+    granularity: monthly
+    source_id: DOC:CHN-2026-03-PROPERTY
+  - id: OBS:FREIGHT-2026-03-04-REDSEA
+    metric_type: FreightRate
+    value: 1.19
+    unit: index_ratio
+    as_of: 2026-03-04 00:00:00+00:00
+    granularity: daily
+    source_id: DOC:OPS-2026-03-REDSEA
+relationships:
+- type: BENCHMARK_FOR
+  from: BM:ICE_BRENT
+  to: COM:OIL_BRENT
+- type: BENCHMARK_FOR
+  from: BM:LME_CU_3M
+  to: COM:COPPER_CATHODE
+- type: BENCHMARK_FOR
+  from: BM:XAU_SPOT
+  to: COM:GOLD
+- type: BENCHMARK_FOR
+  from: BM:XAG_SPOT
+  to: COM:SILVER
+- type: INPUT_TO
+  from: COM:COPPER_CATHODE
+  to: IND:CONSTRUCTION
+  properties:
+    share: 0.71
+    criticality: high
+- type: INPUT_TO
+  from: COM:COPPER_CATHODE
+  to: IND:EV_BATTERIES
+  properties:
+    share: 0.44
+    criticality: medium
+- type: INPUT_TO
+  from: COM:SILVER
+  to: IND:SOLAR
+  properties:
+    share: 0.36
+    criticality: high
+- type: SUBSTITUTE_OF
+  from: COM:GOLD
+  to: COM:SILVER
+  properties:
+    strength: 0.29
+- type: SUBSTITUTE_OF
+  from: COM:SILVER
+  to: COM:GOLD
+  properties:
+    strength: 0.29
+- type: OPERATES_IN
+  from: CO:BHP
+  to: CTY:CHL
+- type: OPERATES_IN
+  from: CO:SAUDI_ARAMCO
+  to: CTY:SAU
+- type: MEMBER_OF
+  from: CTY:SAU
+  to: ORG:OPEC
+- type: SETS
+  from: ORG:FED
+  to: INDIC:FED_FUNDS_RATE
+- type: ISSUED_BY
+  from: EV:2026-03-FED-HOLD
+  to: ORG:FED
+- type: LOCATED_IN
+  from: AS:CHL_ESCONDIDA_MINE
+  to: CTY:CHL
+- type: OWNED_BY
+  from: AS:CHL_ESCONDIDA_MINE
+  to: CO:BHP
+- type: PRODUCES
+  from: AS:CHL_ESCONDIDA_MINE
+  to: COM:COPPER_CATHODE
+- type: LOCATED_IN
+  from: AS:EGY_SUEZ_CANAL
+  to: CTY:EGY
+- type: LOCATED_IN
+  from: AS:SAU_CRUDE_EXPORT_SYSTEM
+  to: CTY:SAU
+- type: OWNED_BY
+  from: AS:SAU_CRUDE_EXPORT_SYSTEM
+  to: CO:SAUDI_ARAMCO
+- type: PRODUCES
+  from: AS:SAU_CRUDE_EXPORT_SYSTEM
+  to: COM:OIL_BRENT
+- type: TRANSPORTED_VIA
+  from: COM:OIL_BRENT
+  to: AS:EGY_SUEZ_CANAL
+- type: DEPENDS_ON
+  from: COM:OIL_BRENT
+  to: CTY:SAU
+  properties:
+    channel: supply
+    criticality: high
+- type: DEPENDS_ON
+  from: COM:COPPER_CATHODE
+  to: CTY:CHN
+  properties:
+    channel: demand
+    criticality: high
+- type: EXPORTS
+  from: CTY:SAU
+  to: COM:OIL_BRENT
+  properties:
+    share: 0.17
+    as_of: 2026-03-05 00:00:00+00:00
+    source_id: DOC:OPEC-2026-03-SUPPLY
+- type: EXPORTS
+  from: CTY:CHL
+  to: COM:COPPER_CATHODE
+  properties:
+    share: 0.24
+    as_of: 2026-03-07 00:00:00+00:00
+    source_id: DOC:CHN-2026-03-PROPERTY
+- type: IMPORTS
+  from: CTY:CHN
+  to: COM:OIL_BRENT
+  properties:
+    share: 0.15
+    as_of: 2026-03-05 00:00:00+00:00
+    source_id: DOC:OPEC-2026-03-SUPPLY
+- type: AFFECTS
+  from: INDIC:US_10Y_REAL_YIELD
+  to: COM:GOLD
+  properties:
+    direction: negative
+    horizon: short_term
+- type: AFFECTS
+  from: INDIC:US_10Y_REAL_YIELD
+  to: COM:SILVER
+  properties:
+    direction: negative
+    horizon: short_term
+- type: AFFECTS
+  from: INDIC:DXY
+  to: COM:GOLD
+  properties:
+    direction: negative
+    horizon: short_term
+- type: AFFECTS
+  from: INDIC:DXY
+  to: COM:OIL_BRENT
+  properties:
+    direction: negative
+    horizon: short_term
+- type: AFFECTS
+  from: INDIC:CHN_PROPERTY_ACTIVITY
+  to: COM:COPPER_CATHODE
+  properties:
+    direction: positive
+    horizon: medium_term
+- type: AFFECTS
+  from: INDIC:US_CPI_YOY
+  to: COM:GOLD
+  properties:
+    direction: positive
+    horizon: medium_term
+- type: RESPONDS_TO
+  from: COM:GOLD
+  to: INDIC:US_10Y_REAL_YIELD
+  properties:
+    direction: inverse
+    horizon: short_term
+- type: RESPONDS_TO
+  from: COM:GOLD
+  to: INDIC:DXY
+  properties:
+    direction: inverse
+    horizon: short_term
+- type: RESPONDS_TO
+  from: COM:COPPER_CATHODE
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+  properties:
+    direction: positive
+    horizon: medium_term
+- type: CORRELATED_WITH
+  from: COM:GOLD
+  to: INDIC:US_CPI_YOY
+  properties:
+    sign: positive
+    window: medium_term
+- type: CORRELATED_WITH
+  from: COM:GOLD
+  to: INDIC:US_10Y_REAL_YIELD
+  properties:
+    sign: negative
+    window: short_term
+- type: AFFECTS
+  from: MECH:RATE_SENSITIVITY
+  to: COM:GOLD
+- type: AFFECTS
+  from: MECH:RATE_SENSITIVITY
+  to: COM:SILVER
+- type: AFFECTS
+  from: MECH:RATE_SENSITIVITY
+  to: INDIC:US_10Y_REAL_YIELD
+- type: AFFECTS
+  from: MECH:INFLATION_HEDGE_DEMAND
+  to: COM:GOLD
+- type: AFFECTS
+  from: MECH:INFLATION_HEDGE_DEMAND
+  to: COM:SILVER
+- type: AFFECTS
+  from: MECH:DOLLAR_PRESSURE
+  to: COM:GOLD
+- type: AFFECTS
+  from: MECH:DOLLAR_PRESSURE
+  to: COM:OIL_BRENT
+- type: AFFECTS
+  from: MECH:DOLLAR_PRESSURE
+  to: INDIC:DXY
+- type: AFFECTS
+  from: MECH:SUPPLY_SHOCK
+  to: COM:OIL_BRENT
+- type: AFFECTS
+  from: MECH:LOGISTICS_CONSTRAINT
+  to: COM:OIL_BRENT
+- type: AFFECTS
+  from: MECH:CHINA_DEMAND_SLOWDOWN
+  to: COM:COPPER_CATHODE
+- type: AFFECTS
+  from: MECH:CHINA_DEMAND_SLOWDOWN
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+- type: TARGETS
+  from: EV:2026-03-FED-HOLD
+  to: INDIC:FED_FUNDS_RATE
+- type: AFFECTS
+  from: EV:2026-03-FED-HOLD
+  to: INDIC:FED_FUNDS_RATE
+  properties:
+    mode: policy
+    severity: 0.44
+- type: AFFECTS
+  from: EV:2026-03-FED-HOLD
+  to: INDIC:US_10Y_REAL_YIELD
+  properties:
+    mode: macro
+    severity: 0.46
+- type: TRIGGERS
+  from: EV:2026-03-FED-HOLD
+  to: MECH:RATE_SENSITIVITY
+- type: TRIGGERS
+  from: EV:2026-03-FED-HOLD
+  to: MECH:DOLLAR_PRESSURE
+- type: AFFECTS
+  from: EV:2026-03-US-COOLER-CPI
+  to: INDIC:US_CPI_YOY
+  properties:
+    mode: macro
+    severity: 0.52
+- type: AFFECTS
+  from: EV:2026-03-US-COOLER-CPI
+  to: INDIC:US_10Y_REAL_YIELD
+  properties:
+    mode: macro
+    severity: 0.48
+- type: AFFECTS
+  from: EV:2026-03-US-COOLER-CPI
+  to: COM:GOLD
+  properties:
+    mode: sentiment
+    severity: 0.51
+- type: TRIGGERS
+  from: EV:2026-03-US-COOLER-CPI
+  to: MECH:INFLATION_HEDGE_DEMAND
+- type: AFFECTS
+  from: EV:2026-03-OPEC-CUT-EXTENSION
+  to: COM:OIL_BRENT
+  properties:
+    mode: supply
+    severity: 0.66
+- type: AFFECTS
+  from: EV:2026-03-OPEC-CUT-EXTENSION
+  to: AS:SAU_CRUDE_EXPORT_SYSTEM
+  properties:
+    mode: supply
+    severity: 0.59
+- type: TRIGGERS
+  from: EV:2026-03-OPEC-CUT-EXTENSION
+  to: MECH:SUPPLY_SHOCK
+- type: AFFECTS
+  from: EV:2026-03-RED-SEA-DISRUPTION
+  to: AS:EGY_SUEZ_CANAL
+  properties:
+    mode: logistics
+    severity: 0.63
+- type: AFFECTS
+  from: EV:2026-03-RED-SEA-DISRUPTION
+  to: COM:OIL_BRENT
+  properties:
+    mode: logistics
+    severity: 0.57
+- type: TRIGGERS
+  from: EV:2026-03-RED-SEA-DISRUPTION
+  to: MECH:LOGISTICS_CONSTRAINT
+- type: AFFECTS
+  from: EV:2026-03-CHINA-PROPERTY-WEAKNESS
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+  properties:
+    mode: macro
+    severity: 0.61
+- type: AFFECTS
+  from: EV:2026-03-CHINA-PROPERTY-WEAKNESS
+  to: COM:COPPER_CATHODE
+  properties:
+    mode: demand
+    severity: 0.58
+- type: TRIGGERS
+  from: EV:2026-03-CHINA-PROPERTY-WEAKNESS
+  to: MECH:CHINA_DEMAND_SLOWDOWN
+- type: SUPPORTS
+  from: DOC:BLS-2026-03-CPI
+  to: CLM:BLS-2026-03-GOLD-YIELDS
+- type: SUPPORTS
+  from: DOC:FED-2026-03-GUIDANCE
+  to: CLM:FED-2026-03-REALYIELD
+- type: SUPPORTS
+  from: DOC:OPEC-2026-03-SUPPLY
+  to: CLM:OPEC-2026-03-OIL-SUPPLY
+- type: SUPPORTS
+  from: DOC:OPS-2026-03-REDSEA
+  to: CLM:OPS-2026-03-OIL-FREIGHT
+- type: SUPPORTS
+  from: DOC:CHN-2026-03-PROPERTY
+  to: CLM:CHN-2026-03-COPPER-DEMAND
+- type: SUPPORTS
+  from: DOC:SOLAR-2026-03-SILVER
+  to: CLM:SOLAR-2026-03-SILVER-DEMAND
+- type: ABOUT
+  from: CLM:BLS-2026-03-GOLD-YIELDS
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:BLS-2026-03-GOLD-YIELDS
+  to: INDIC:US_10Y_REAL_YIELD
+- type: ABOUT
+  from: CLM:BLS-2026-03-GOLD-YIELDS
+  to: INDIC:DXY
+- type: ABOUT
+  from: CLM:FED-2026-03-REALYIELD
+  to: ORG:FED
+- type: ABOUT
+  from: CLM:FED-2026-03-REALYIELD
+  to: INDIC:US_10Y_REAL_YIELD
+- type: ABOUT
+  from: CLM:FED-2026-03-REALYIELD
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:OPEC-2026-03-OIL-SUPPLY
+  to: ORG:OPEC
+- type: ABOUT
+  from: CLM:OPEC-2026-03-OIL-SUPPLY
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:OPS-2026-03-OIL-FREIGHT
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:OPS-2026-03-OIL-FREIGHT
+  to: AS:EGY_SUEZ_CANAL
+- type: ABOUT
+  from: CLM:CHN-2026-03-COPPER-DEMAND
+  to: COM:COPPER_CATHODE
+- type: ABOUT
+  from: CLM:CHN-2026-03-COPPER-DEMAND
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+- type: ABOUT
+  from: CLM:SOLAR-2026-03-SILVER-DEMAND
+  to: COM:SILVER
+- type: ABOUT
+  from: CLM:SOLAR-2026-03-SILVER-DEMAND
+  to: IND:SOLAR
+- type: OF
+  from: OBS:PRICE-2026-03-11-XAU
+  to: BM:XAU_SPOT
+- type: OF
+  from: OBS:PRICE-2026-03-11-XAG
+  to: BM:XAG_SPOT
+- type: OF
+  from: OBS:PRICE-2026-03-05-ICE_BRENT
+  to: BM:ICE_BRENT
+- type: OF
+  from: OBS:PRICE-2026-03-07-LME_CU_3M
+  to: BM:LME_CU_3M
+- type: OF
+  from: OBS:INDIC-2026-03-11-US_CPI_YOY
+  to: INDIC:US_CPI_YOY
+- type: OF
+  from: OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD
+  to: INDIC:US_10Y_REAL_YIELD
+- type: OF
+  from: OBS:INDIC-2026-03-11-DXY
+  to: INDIC:DXY
+- type: OF
+  from: OBS:INDIC-2026-03-18-FED_FUNDS
+  to: INDIC:FED_FUNDS_RATE
+- type: OF
+  from: OBS:INDIC-2026-03-07-CHN_PROPERTY
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+- type: OF
+  from: OBS:FREIGHT-2026-03-04-REDSEA
+  to: AS:EGY_SUEZ_CANAL
+- type: EVIDENCED_BY
+  from: MECH:RATE_SENSITIVITY
+  to: CLM:FED-2026-03-REALYIELD
+- type: EVIDENCED_BY
+  from: MECH:RATE_SENSITIVITY
+  to: OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD
+- type: EVIDENCED_BY
+  from: MECH:INFLATION_HEDGE_DEMAND
+  to: CLM:BLS-2026-03-GOLD-YIELDS
+- type: EVIDENCED_BY
+  from: MECH:INFLATION_HEDGE_DEMAND
+  to: OBS:INDIC-2026-03-11-US_CPI_YOY
+- type: EVIDENCED_BY
+  from: MECH:DOLLAR_PRESSURE
+  to: CLM:BLS-2026-03-GOLD-YIELDS
+- type: EVIDENCED_BY
+  from: MECH:DOLLAR_PRESSURE
+  to: OBS:INDIC-2026-03-11-DXY
+- type: EVIDENCED_BY
+  from: MECH:SUPPLY_SHOCK
+  to: CLM:OPEC-2026-03-OIL-SUPPLY
+- type: EVIDENCED_BY
+  from: MECH:SUPPLY_SHOCK
+  to: OBS:PRICE-2026-03-05-ICE_BRENT
+- type: EVIDENCED_BY
+  from: MECH:LOGISTICS_CONSTRAINT
+  to: CLM:OPS-2026-03-OIL-FREIGHT
+- type: EVIDENCED_BY
+  from: MECH:LOGISTICS_CONSTRAINT
+  to: OBS:FREIGHT-2026-03-04-REDSEA
+- type: EVIDENCED_BY
+  from: MECH:CHINA_DEMAND_SLOWDOWN
+  to: CLM:CHN-2026-03-COPPER-DEMAND
+- type: EVIDENCED_BY
+  from: MECH:CHINA_DEMAND_SLOWDOWN
+  to: OBS:INDIC-2026-03-07-CHN_PROPERTY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-GOLD-MACRO
+  to: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: INDIC:US_10Y_REAL_YIELD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: INDIC:US_CPI_YOY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-GOLD-MACRO
+  to: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: INDIC:US_CPI_YOY
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: ORG:FED
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+  to: ORG:OPEC
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+  to: AS:EGY_SUEZ_CANAL
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+  to: COM:OIL_BRENT
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+  to: INDIC:DXY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-COPPER-CHINA
+  to: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: COM:COPPER_CATHODE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: CTY:CHN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: IND:CONSTRUCTION
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-COPPER-CHINA
+  to: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: COM:COPPER_CATHODE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: CTY:CHN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: IND:CONSTRUCTION
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-SILVER-SOLAR
+  to: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+  to: COM:SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+  to: IND:SOLAR
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-SILVER-SOLAR
+  to: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: COM:SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: INDIC:US_CPI_YOY

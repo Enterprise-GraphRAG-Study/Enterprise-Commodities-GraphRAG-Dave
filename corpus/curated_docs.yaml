@@ -1,0 +1,52 @@
+metadata:
+  corpus_id: curated-macro-commodity-docs
+  version: 1
+
+documents:
+  - id: DOC:CURATED-2026-03-GOLD-MACRO
+    doc_type: note
+    title: Gold gains as CPI cools and real yields retreat
+    publisher: Curated Macro Desk
+    published_at: 2026-03-11T13:00:00Z
+    url: internal://curated/2026-03-gold-macro
+    summary: Curated note linking CPI, real yields, USD, and gold.
+    body: >
+      Gold gained after CPI eased and real yields moved lower.
+      The softer inflation print also pressured the dollar index, supporting bullion.
+      Fed guidance remains restrictive, but markets read the inflation data as reducing near-term yield pressure on gold.
+
+  - id: DOC:CURATED-2026-03-OIL-SUPPLY
+    doc_type: note
+    title: OPEC discipline and Red Sea delays tighten oil market
+    publisher: Curated Energy Desk
+    published_at: 2026-03-05T11:00:00Z
+    url: internal://curated/2026-03-oil-supply
+    summary: Curated note on oil supply and logistics.
+    body: >
+      OPEC maintained supply restraint, tightening Brent availability.
+      Red Sea shipping disruption lifted freight stress and delayed crude cargoes through the Suez Canal.
+      A firmer dollar capped some upside in oil even as physical supply stayed tight.
+
+  - id: DOC:CURATED-2026-03-COPPER-CHINA
+    doc_type: note
+    title: China property weakness weighs on copper demand
+    publisher: Curated Metals Desk
+    published_at: 2026-03-07T02:00:00Z
+    url: internal://curated/2026-03-copper-china
+    summary: Curated note on China demand transmission into copper.
+    body: >
+      Copper weakened as China property activity slowed.
+      Slower Chinese construction demand reduced demand for copper.
+      The same demand slowdown weighed on sentiment around industrial metals more broadly.
+
+  - id: DOC:CURATED-2026-03-SILVER-SOLAR
+    doc_type: note
+    title: Solar manufacturing continues to support silver usage
+    publisher: Curated Metals Desk
+    published_at: 2026-03-06T15:00:00Z
+    url: internal://curated/2026-03-silver-solar
+    summary: Curated note on silver's industrial demand channel.
+    body: >
+      Solar manufacturing increased demand for silver.
+      Silver also tracked gold higher after inflation softened.
+      Dollar weakness supported precious metals, with silver benefiting from both macro and industrial demand.

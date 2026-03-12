@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-graph-assets:
+    name: Validate ontology and generated graph assets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Compile Python scripts
+        run: python -m compileall scripts
+
+      - name: Validate repository target
+        run: |
+          echo "Running CI for $GITHUB_REPOSITORY"
+          test "$GITHUB_REPOSITORY" = "Enterprise-GraphRAG-Study/Enterprise-Commodities-GraphRAG-Dave"
+
+      - name: Generate base Neo4j seed
+        run: python scripts/generate_neo4j_seed.py
+
+      - name: Extract curated claims
+        run: python scripts/extract_graph_claims.py
+
+      - name: Generate enriched Neo4j seed
+        run: python scripts/generate_neo4j_seed.py --input ontology/model/phase1_enriched.yaml --output ontology/neo4j/seed_enriched.cypher
+
+      - name: Verify generated artifacts exist
+        run: |
+          test -f ontology/neo4j/seed.cypher
+          test -f ontology/model/extracted_claims.yaml
+          test -f ontology/model/phase1_enriched.yaml
+          test -f ontology/neo4j/seed_enriched.cypher

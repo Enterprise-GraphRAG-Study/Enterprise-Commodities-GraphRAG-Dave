@@ -1,0 +1,192 @@
+metadata:
+  dataset_id: curated-macro-commodity-docs
+  version: 1
+  generated_from: corpus/curated_docs.yaml
+nodes:
+  Document:
+  - id: DOC:CURATED-2026-03-GOLD-MACRO
+    doc_type: note
+    title: Gold gains as CPI cools and real yields retreat
+    publisher: Curated Macro Desk
+    published_at: &id001 2026-03-11 13:00:00+00:00
+    url: internal://curated/2026-03-gold-macro
+    summary: Curated note linking CPI, real yields, USD, and gold.
+  - id: DOC:CURATED-2026-03-OIL-SUPPLY
+    doc_type: note
+    title: OPEC discipline and Red Sea delays tighten oil market
+    publisher: Curated Energy Desk
+    published_at: &id002 2026-03-05 11:00:00+00:00
+    url: internal://curated/2026-03-oil-supply
+    summary: Curated note on oil supply and logistics.
+  - id: DOC:CURATED-2026-03-COPPER-CHINA
+    doc_type: note
+    title: China property weakness weighs on copper demand
+    publisher: Curated Metals Desk
+    published_at: &id003 2026-03-07 02:00:00+00:00
+    url: internal://curated/2026-03-copper-china
+    summary: Curated note on China demand transmission into copper.
+  - id: DOC:CURATED-2026-03-SILVER-SOLAR
+    doc_type: note
+    title: Solar manufacturing continues to support silver usage
+    publisher: Curated Metals Desk
+    published_at: &id004 2026-03-06 15:00:00+00:00
+    url: internal://curated/2026-03-silver-solar
+    summary: Curated note on silver's industrial demand channel.
+  Claim:
+  - id: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+    claim_type: price_explanation
+    text: Gold gained after CPI eased and real yields moved lower.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-GOLD-MACRO
+    start_time: *id001
+  - id: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+    claim_type: price_explanation
+    text: Fed guidance remains restrictive, but markets read the inflation data as
+      reducing near-term yield pressure on gold.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-GOLD-MACRO
+    start_time: *id001
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+    claim_type: supply_change
+    text: OPEC maintained supply restraint, tightening Brent availability.
+    confidence: 0.8
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+    claim_type: shipment_delay
+    text: Red Sea shipping disruption lifted freight stress and delayed crude cargoes
+      through the Suez Canal.
+    confidence: 0.77
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+    claim_type: price_explanation
+    text: A firmer dollar capped some upside in oil even as physical supply stayed
+      tight.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-OIL-SUPPLY
+    start_time: *id002
+  - id: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+    claim_type: price_explanation
+    text: Copper weakened as China property activity slowed.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-COPPER-CHINA
+    start_time: *id003
+  - id: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+    claim_type: demand_change
+    text: Slower Chinese construction demand reduced demand for copper.
+    confidence: 0.76
+    source_id: DOC:CURATED-2026-03-COPPER-CHINA
+    start_time: *id003
+  - id: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+    claim_type: demand_change
+    text: Solar manufacturing increased demand for silver.
+    confidence: 0.76
+    source_id: DOC:CURATED-2026-03-SILVER-SOLAR
+    start_time: *id004
+  - id: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+    claim_type: price_explanation
+    text: Silver also tracked gold higher after inflation softened.
+    confidence: 0.74
+    source_id: DOC:CURATED-2026-03-SILVER-SOLAR
+    start_time: *id004
+relationships:
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-GOLD-MACRO
+  to: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: INDIC:US_10Y_REAL_YIELD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
+  to: INDIC:US_CPI_YOY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-GOLD-MACRO
+  to: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: INDIC:US_CPI_YOY
+- type: ABOUT
+  from: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
+  to: ORG:FED
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
+  to: ORG:OPEC
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+  to: AS:EGY_SUEZ_CANAL
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
+  to: COM:OIL_BRENT
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-OIL-SUPPLY
+  to: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+  to: COM:OIL_BRENT
+- type: ABOUT
+  from: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
+  to: INDIC:DXY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-COPPER-CHINA
+  to: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: COM:COPPER_CATHODE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: CTY:CHN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: IND:CONSTRUCTION
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
+  to: INDIC:CHN_PROPERTY_ACTIVITY
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-COPPER-CHINA
+  to: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: COM:COPPER_CATHODE
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: CTY:CHN
+- type: ABOUT
+  from: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
+  to: IND:CONSTRUCTION
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-SILVER-SOLAR
+  to: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+  to: COM:SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
+  to: IND:SOLAR
+- type: SUPPORTS
+  from: DOC:CURATED-2026-03-SILVER-SOLAR
+  to: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: COM:GOLD
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: COM:SILVER
+- type: ABOUT
+  from: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
+  to: INDIC:US_CPI_YOY
