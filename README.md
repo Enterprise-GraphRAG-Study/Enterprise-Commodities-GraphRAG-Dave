@@ -13,8 +13,10 @@ The first implementation target is Neo4j because it gives the fastest path to:
 - `ontology/commodity_ontology.md`: ontology specification
 - `ontology/model/phase1.yaml`: editable ontology instance data
 - `ontology/neo4j/schema.cypher`: constraints and indexes
-- `ontology/neo4j/seed.cypher`: generated demo graph for oil, copper, and nickel
-- `scripts/generate_neo4j_seed.py`: YAML to Neo4j seed generator
+- `ontology/neo4j/seed.cypher`: generated base demo graph
+- `scripts/`: graph generation, extraction, and benchmarking entry points
+- `src/data_loader.py`: local and Hugging Face dataset loading helpers
+- `src/accelerator.py`: CUDA/MPS/CPU device detection helpers
 
 ## Initial scope
 
@@ -59,3 +61,42 @@ Inputs and outputs:
 - `ontology/model/phase1_enriched.yaml`: merged graph dataset ready for Neo4j seed generation
 
 The extractor is intentionally simple and deterministic. It is a starter ingestion path for relationship-bearing text, not a substitute for a full LLM extraction pipeline.
+
+## Hardware Specs
+
+This repository was benchmarked on the following local machine:
+
+- Laptop: HP OMEN Transcend 16
+- OS: Windows 11 (`10.0.26200`)
+- CPU: Intel Core i7-13700HX, 16 cores / 24 logical processors
+- RAM: 34.0 GB installed
+- GPU: NVIDIA GeForce RTX 4070 Laptop GPU
+- PyTorch: `2.10.0+cu128`
+- CUDA runtime detected by PyTorch: `12.8`
+
+## Dataset Description
+
+The repository currently ships with a hand-authored ontology dataset in `ontology/model/phase1.yaml` and a curated explanatory corpus in `corpus/curated_docs.yaml`.
+
+For external expansion, `src/data_loader.py` is set up around the Hugging Face dataset `aaronmat1905/global-commodity-shocks-analysis-data`, which is a commodity shock analysis dataset suitable for enriching event and macro-linked commodity reasoning:
+
+- Dataset page: `https://huggingface.co/datasets/aaronmat1905/global-commodity-shocks-analysis-data`
+
+The current repo does not automatically ingest that dataset into the graph yet. It is documented as the first Hugging Face dataset target for structured expansion beyond the curated starter corpus.
+
+## Benchmark Results
+
+PyTorch tensor conversion was benchmarked with `scripts/benchmark_tensor_conversion.py` using `1,000,000` float32 values and the median of `20` runs.
+
+Results from this machine:
+
+- Python list -> CPU tensor: `90.81 ms`
+- Python list -> CUDA tensor: `118.76 ms`
+- Python list -> CPU tensor -> CUDA: `114.81 ms`
+
+Benchmark artifacts:
+
+- `docs/assets/tensor_conversion_benchmark.json`
+- `docs/assets/tensor_conversion_benchmark.svg`
+
+![PyTorch tensor conversion benchmark](docs/assets/tensor_conversion_benchmark.svg)

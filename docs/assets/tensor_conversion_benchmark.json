@@ -1,0 +1,25 @@
+{
+  "elements": 1000000,
+  "iterations": 20,
+  "accelerator": {
+    "device": "cuda",
+    "backend": "cuda",
+    "torch_version": "2.10.0+cu128",
+    "cuda_version": "12.8",
+    "device_name": "NVIDIA GeForce RTX 4070 Laptop GPU"
+  },
+  "results": [
+    {
+      "label": "Python list -> CPU tensor",
+      "median_ms": 90.8081000088714
+    },
+    {
+      "label": "Python list -> CUDA tensor",
+      "median_ms": 118.75560000771657
+    },
+    {
+      "label": "Python list -> CPU tensor -> CUDA",
+      "median_ms": 114.81249998905696
+    }
+  ]
+}

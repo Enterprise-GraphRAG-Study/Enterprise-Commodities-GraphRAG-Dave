@@ -1,7 +1,7 @@
 metadata:
   dataset_id: phase1-macro-commodities
   version: 2
-  as_of: 2026-03-12
+  as_of: '2026-03-12'
   description: 'Starter commodity intelligence graph centered on gold, silver, Brent
     crude, copper, macro indicators, Fed policy, OPEC supply actions, and explanatory
     events.
@@ -179,7 +179,7 @@ nodes:
     name: Federal Reserve holds policy rate
     event_type: Regulatory
     policy_type: RateDecision
-    start_time: 2026-03-18 18:00:00+00:00
+    start_time: '2026-03-18T18:00:00Z'
     severity: 0.44
     confidence: 0.8
     summary: Federal Reserve maintained restrictive policy guidance, keeping real
@@ -188,7 +188,7 @@ nodes:
   - id: EV:2026-03-US-COOLER-CPI
     name: US inflation cools
     event_type: Macroeconomic
-    start_time: 2026-03-11 12:30:00+00:00
+    start_time: '2026-03-11T12:30:00Z'
     severity: 0.52
     confidence: 0.84
     summary: Softer CPI data reduced real-yield pressure and supported precious metals
@@ -196,7 +196,7 @@ nodes:
   - id: EV:2026-03-OPEC-CUT-EXTENSION
     name: OPEC extends supply restraint
     event_type: Regulatory
-    start_time: 2026-03-05 10:00:00+00:00
+    start_time: '2026-03-05T10:00:00Z'
     severity: 0.66
     confidence: 0.83
     summary: OPEC maintained production discipline, tightening expectations for near-term
@@ -204,14 +204,14 @@ nodes:
   - id: EV:2026-03-RED-SEA-DISRUPTION
     name: Red Sea shipping disruption
     event_type: Logistics
-    start_time: 2026-03-04 06:00:00+00:00
+    start_time: '2026-03-04T06:00:00Z'
     severity: 0.63
     confidence: 0.78
     summary: Shipping delays increased voyage risk and freight costs for crude cargoes.
   - id: EV:2026-03-CHINA-PROPERTY-WEAKNESS
     name: China property activity weakens
     event_type: Macroeconomic
-    start_time: 2026-03-07 01:00:00+00:00
+    start_time: '2026-03-07T01:00:00Z'
     severity: 0.61
     confidence: 0.79
     summary: Slower Chinese property activity weighed on copper demand expectations.
@@ -220,70 +220,70 @@ nodes:
     doc_type: release
     title: US CPI release points to softer inflation
     publisher: BLS summary
-    published_at: 2026-03-11 12:30:00+00:00
+    published_at: '2026-03-11T12:30:00Z'
     url: internal://bls/2026-03-cpi
     summary: Inflation release used to link CPI, real yields, USD, and precious metals.
   - id: DOC:FED-2026-03-GUIDANCE
     doc_type: statement
     title: Fed guidance keeps policy restrictive
     publisher: Federal Reserve
-    published_at: 2026-03-18 18:00:00+00:00
+    published_at: '2026-03-18T18:00:00Z'
     url: internal://fed/2026-03-guidance
     summary: Policy statement framing rates as restrictive for longer.
   - id: DOC:OPEC-2026-03-SUPPLY
     doc_type: report
     title: OPEC supply discipline remains in place
     publisher: OPEC monitor
-    published_at: 2026-03-05 10:00:00+00:00
+    published_at: '2026-03-05T10:00:00Z'
     url: internal://opec/2026-03-supply
     summary: Note on extended supply restraint and tighter crude balances.
   - id: DOC:OPS-2026-03-REDSEA
     doc_type: report
     title: Red Sea disruptions lift freight stress
     publisher: Internal Ops Desk
-    published_at: 2026-03-04 08:30:00+00:00
+    published_at: '2026-03-04T08:30:00Z'
     url: internal://ops/2026-03-redsea
     summary: Freight and routing update on shipping disruptions affecting energy cargoes.
   - id: DOC:CHN-2026-03-PROPERTY
     doc_type: report
     title: China property slowdown pressures industrial metals
     publisher: Internal Macro Desk
-    published_at: 2026-03-07 01:00:00+00:00
+    published_at: '2026-03-07T01:00:00Z'
     url: internal://macro/2026-03-china-property
     summary: China activity note connecting weaker property demand to copper expectations.
   - id: DOC:SOLAR-2026-03-SILVER
     doc_type: note
     title: Solar manufacturing supports silver demand
     publisher: Internal Metals Desk
-    published_at: 2026-03-06 14:00:00+00:00
+    published_at: '2026-03-06T14:00:00Z'
     url: internal://metals/2026-03-solar-silver
     summary: Demand note linking solar manufacturing growth to silver usage.
   - id: DOC:CURATED-2026-03-GOLD-MACRO
     doc_type: note
     title: Gold gains as CPI cools and real yields retreat
     publisher: Curated Macro Desk
-    published_at: &id001 2026-03-11 13:00:00+00:00
+    published_at: '2026-03-11T13:00:00Z'
     url: internal://curated/2026-03-gold-macro
     summary: Curated note linking CPI, real yields, USD, and gold.
   - id: DOC:CURATED-2026-03-OIL-SUPPLY
     doc_type: note
     title: OPEC discipline and Red Sea delays tighten oil market
     publisher: Curated Energy Desk
-    published_at: &id002 2026-03-05 11:00:00+00:00
+    published_at: '2026-03-05T11:00:00Z'
     url: internal://curated/2026-03-oil-supply
     summary: Curated note on oil supply and logistics.
   - id: DOC:CURATED-2026-03-COPPER-CHINA
     doc_type: note
     title: China property weakness weighs on copper demand
     publisher: Curated Metals Desk
-    published_at: &id003 2026-03-07 02:00:00+00:00
+    published_at: '2026-03-07T02:00:00Z'
     url: internal://curated/2026-03-copper-china
     summary: Curated note on China demand transmission into copper.
   - id: DOC:CURATED-2026-03-SILVER-SOLAR
     doc_type: note
     title: Solar manufacturing continues to support silver usage
     publisher: Curated Metals Desk
-    published_at: &id004 2026-03-06 15:00:00+00:00
+    published_at: '2026-03-06T15:00:00Z'
     url: internal://curated/2026-03-silver-solar
     summary: Curated note on silver's industrial demand channel.
   Claim:
@@ -293,102 +293,102 @@ nodes:
       the dollar.
     confidence: 0.84
     source_id: DOC:BLS-2026-03-CPI
-    start_time: 2026-03-11 12:30:00+00:00
+    start_time: '2026-03-11T12:30:00Z'
   - id: CLM:FED-2026-03-REALYIELD
     claim_type: policy
     text: Restrictive Fed guidance kept real yields elevated, limiting upside for
       non-yielding metals.
     confidence: 0.8
     source_id: DOC:FED-2026-03-GUIDANCE
-    start_time: 2026-03-18 18:00:00+00:00
+    start_time: '2026-03-18T18:00:00Z'
   - id: CLM:OPEC-2026-03-OIL-SUPPLY
     claim_type: supply_change
     text: Extended OPEC supply restraint tightened expected oil availability.
     confidence: 0.83
     source_id: DOC:OPEC-2026-03-SUPPLY
-    start_time: 2026-03-05 10:00:00+00:00
+    start_time: '2026-03-05T10:00:00Z'
   - id: CLM:OPS-2026-03-OIL-FREIGHT
     claim_type: shipment_delay
     text: Red Sea shipping disruption increased freight risk for oil cargoes.
     confidence: 0.78
     source_id: DOC:OPS-2026-03-REDSEA
-    start_time: 2026-03-04 06:00:00+00:00
+    start_time: '2026-03-04T06:00:00Z'
   - id: CLM:CHN-2026-03-COPPER-DEMAND
     claim_type: demand_change
     text: Weaker China property activity reduced expected copper demand growth.
     confidence: 0.79
     source_id: DOC:CHN-2026-03-PROPERTY
-    start_time: 2026-03-07 01:00:00+00:00
+    start_time: '2026-03-07T01:00:00Z'
   - id: CLM:SOLAR-2026-03-SILVER-DEMAND
     claim_type: demand_change
     text: Solar manufacturing growth increased structural silver demand.
     confidence: 0.76
     source_id: DOC:SOLAR-2026-03-SILVER
-    start_time: 2026-03-06 14:00:00+00:00
+    start_time: '2026-03-06T14:00:00Z'
   - id: CLM:CURATED-2026-03-GOLD-MACRO-01-GOLD_GAINED_AFTER_CPI_EASED_AND_REAL_YIELDS_MOVE
     claim_type: price_explanation
     text: Gold gained after CPI eased and real yields moved lower.
     confidence: 0.74
     source_id: DOC:CURATED-2026-03-GOLD-MACRO
-    start_time: *id001
+    start_time: '2026-03-11T13:00:00Z'
   - id: CLM:CURATED-2026-03-GOLD-MACRO-03-FED_GUIDANCE_REMAINS_RESTRICTIVE_BUT_MARKETS_REA
     claim_type: price_explanation
     text: Fed guidance remains restrictive, but markets read the inflation data as
       reducing near-term yield pressure on gold.
     confidence: 0.74
     source_id: DOC:CURATED-2026-03-GOLD-MACRO
-    start_time: *id001
+    start_time: '2026-03-11T13:00:00Z'
   - id: CLM:CURATED-2026-03-OIL-SUPPLY-01-OPEC_MAINTAINED_SUPPLY_RESTRAINT_TIGHTENING_BREN
     claim_type: supply_change
     text: OPEC maintained supply restraint, tightening Brent availability.
     confidence: 0.8
     source_id: DOC:CURATED-2026-03-OIL-SUPPLY
-    start_time: *id002
+    start_time: '2026-03-05T11:00:00Z'
   - id: CLM:CURATED-2026-03-OIL-SUPPLY-02-RED_SEA_SHIPPING_DISRUPTION_LIFTED_FREIGHT_STRES
     claim_type: shipment_delay
     text: Red Sea shipping disruption lifted freight stress and delayed crude cargoes
       through the Suez Canal.
     confidence: 0.77
     source_id: DOC:CURATED-2026-03-OIL-SUPPLY
-    start_time: *id002
+    start_time: '2026-03-05T11:00:00Z'
   - id: CLM:CURATED-2026-03-OIL-SUPPLY-03-A_FIRMER_DOLLAR_CAPPED_SOME_UPSIDE_IN_OIL_EVEN_A
     claim_type: price_explanation
     text: A firmer dollar capped some upside in oil even as physical supply stayed
       tight.
     confidence: 0.74
     source_id: DOC:CURATED-2026-03-OIL-SUPPLY
-    start_time: *id002
+    start_time: '2026-03-05T11:00:00Z'
   - id: CLM:CURATED-2026-03-COPPER-CHINA-01-COPPER_WEAKENED_AS_CHINA_PROPERTY_ACTIVITY_SLOWE
     claim_type: price_explanation
     text: Copper weakened as China property activity slowed.
     confidence: 0.74
     source_id: DOC:CURATED-2026-03-COPPER-CHINA
-    start_time: *id003
+    start_time: '2026-03-07T02:00:00Z'
   - id: CLM:CURATED-2026-03-COPPER-CHINA-02-SLOWER_CHINESE_CONSTRUCTION_DEMAND_REDUCED_DEMAN
     claim_type: demand_change
     text: Slower Chinese construction demand reduced demand for copper.
     confidence: 0.76
     source_id: DOC:CURATED-2026-03-COPPER-CHINA
-    start_time: *id003
+    start_time: '2026-03-07T02:00:00Z'
   - id: CLM:CURATED-2026-03-SILVER-SOLAR-01-SOLAR_MANUFACTURING_INCREASED_DEMAND_FOR_SILVER
     claim_type: demand_change
     text: Solar manufacturing increased demand for silver.
     confidence: 0.76
     source_id: DOC:CURATED-2026-03-SILVER-SOLAR
-    start_time: *id004
+    start_time: '2026-03-06T15:00:00Z'
   - id: CLM:CURATED-2026-03-SILVER-SOLAR-02-SILVER_ALSO_TRACKED_GOLD_HIGHER_AFTER_INFLATION_
     claim_type: price_explanation
     text: Silver also tracked gold higher after inflation softened.
     confidence: 0.74
     source_id: DOC:CURATED-2026-03-SILVER-SOLAR
-    start_time: *id004
+    start_time: '2026-03-06T15:00:00Z'
   Observation:
   - id: OBS:PRICE-2026-03-11-XAU
     metric_type: Price
     value: 2184.0
     unit: USD/oz
     currency: USD
-    as_of: 2026-03-11 00:00:00+00:00
+    as_of: '2026-03-11T00:00:00Z'
     granularity: daily
     source_id: DOC:BLS-2026-03-CPI
   - id: OBS:PRICE-2026-03-11-XAG
@@ -396,7 +396,7 @@ nodes:
     value: 24.6
     unit: USD/oz
     currency: USD
-    as_of: 2026-03-11 00:00:00+00:00
+    as_of: '2026-03-11T00:00:00Z'
     granularity: daily
     source_id: DOC:SOLAR-2026-03-SILVER
   - id: OBS:PRICE-2026-03-05-ICE_BRENT
@@ -404,7 +404,7 @@ nodes:
     value: 84.9
     unit: USD/bbl
     currency: USD
-    as_of: 2026-03-05 00:00:00+00:00
+    as_of: '2026-03-05T00:00:00Z'
     granularity: daily
     source_id: DOC:OPEC-2026-03-SUPPLY
   - id: OBS:PRICE-2026-03-07-LME_CU_3M
@@ -412,49 +412,49 @@ nodes:
     value: 8715.0
     unit: USD/mt
     currency: USD
-    as_of: 2026-03-07 00:00:00+00:00
+    as_of: '2026-03-07T00:00:00Z'
     granularity: daily
     source_id: DOC:CHN-2026-03-PROPERTY
   - id: OBS:INDIC-2026-03-11-US_CPI_YOY
     metric_type: Inflation
     value: 2.9
     unit: percent
-    as_of: 2026-03-11 00:00:00+00:00
+    as_of: '2026-03-11T00:00:00Z'
     granularity: monthly
     source_id: DOC:BLS-2026-03-CPI
   - id: OBS:INDIC-2026-03-11-US_10Y_REAL_YIELD
     metric_type: RealYield
     value: 1.62
     unit: percent
-    as_of: 2026-03-11 00:00:00+00:00
+    as_of: '2026-03-11T00:00:00Z'
     granularity: daily
     source_id: DOC:BLS-2026-03-CPI
   - id: OBS:INDIC-2026-03-11-DXY
     metric_type: FX
     value: 103.4
     unit: index
-    as_of: 2026-03-11 00:00:00+00:00
+    as_of: '2026-03-11T00:00:00Z'
     granularity: daily
     source_id: DOC:BLS-2026-03-CPI
   - id: OBS:INDIC-2026-03-18-FED_FUNDS
     metric_type: InterestRate
     value: 5.5
     unit: percent
-    as_of: 2026-03-18 00:00:00+00:00
+    as_of: '2026-03-18T00:00:00Z'
     granularity: event
     source_id: DOC:FED-2026-03-GUIDANCE
   - id: OBS:INDIC-2026-03-07-CHN_PROPERTY
     metric_type: PMI
     value: 47.8
     unit: index
-    as_of: 2026-03-07 00:00:00+00:00
+    as_of: '2026-03-07T00:00:00Z'
     granularity: monthly
     source_id: DOC:CHN-2026-03-PROPERTY
   - id: OBS:FREIGHT-2026-03-04-REDSEA
     metric_type: FreightRate
     value: 1.19
     unit: index_ratio
-    as_of: 2026-03-04 00:00:00+00:00
+    as_of: '2026-03-04T00:00:00Z'
     granularity: daily
     source_id: DOC:OPS-2026-03-REDSEA
 relationships:
@@ -554,21 +554,21 @@ relationships:
   to: COM:OIL_BRENT
   properties:
     share: 0.17
-    as_of: 2026-03-05 00:00:00+00:00
+    as_of: '2026-03-05T00:00:00Z'
     source_id: DOC:OPEC-2026-03-SUPPLY
 - type: EXPORTS
   from: CTY:CHL
   to: COM:COPPER_CATHODE
   properties:
     share: 0.24
-    as_of: 2026-03-07 00:00:00+00:00
+    as_of: '2026-03-07T00:00:00Z'
     source_id: DOC:CHN-2026-03-PROPERTY
 - type: IMPORTS
   from: CTY:CHN
   to: COM:OIL_BRENT
   properties:
     share: 0.15
-    as_of: 2026-03-05 00:00:00+00:00
+    as_of: '2026-03-05T00:00:00Z'
     source_id: DOC:OPEC-2026-03-SUPPLY
 - type: AFFECTS
   from: INDIC:US_10Y_REAL_YIELD

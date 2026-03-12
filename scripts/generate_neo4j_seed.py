@@ -8,7 +8,6 @@ from typing import Any
 
 import yaml
 
-
 SUBTYPE_LABELS: dict[str, list[str]] = {
     "Policy": ["Policy", "Event"],
 }
@@ -47,6 +46,7 @@ class NodeRecord:
 
 
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for seed generation."""
     parser = argparse.ArgumentParser(description="Generate Neo4j seed Cypher from ontology YAML.")
     parser.add_argument(
         "--input",
@@ -62,6 +62,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
+    """Load a YAML file and validate that the top level is a mapping."""
     with path.open("r", encoding="utf-8") as handle:
         data = yaml.safe_load(handle)
     if not isinstance(data, dict):
@@ -70,6 +71,7 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def validate_document(data: dict[str, Any]) -> tuple[list[NodeRecord], list[dict[str, Any]]]:
+    """Validate ontology data and return normalized node and relationship records."""
     nodes_section = data.get("nodes")
     relationships = data.get("relationships")
 
@@ -137,11 +139,13 @@ def validate_document(data: dict[str, Any]) -> tuple[list[NodeRecord], list[dict
 
 
 def quote_string(value: str) -> str:
+    """Escape a string for safe Cypher output."""
     escaped = value.replace("\\", "\\\\").replace("'", "\\'")
     return f"'{escaped}'"
 
 
 def render_scalar(value: Any) -> str:
+    """Render a Python scalar value as a Cypher literal."""
     if isinstance(value, datetime):
         return f"datetime({quote_string(value.isoformat().replace('+00:00', 'Z'))})"
     if isinstance(value, date):
@@ -162,6 +166,7 @@ def render_scalar(value: Any) -> str:
 
 
 def looks_like_datetime(value: str) -> bool:
+    """Return whether a string matches the narrow ISO-8601 format emitted into Cypher."""
     if len(value) < 20:
         return False
     if not (value[:4].isdigit() and value[5:7].isdigit() and value[8:10].isdigit()):
@@ -172,6 +177,7 @@ def looks_like_datetime(value: str) -> bool:
 
 
 def render_map(payload: dict[str, Any], indent: int = 0) -> str:
+    """Render a flat property mapping as a Cypher map."""
     pad = " " * indent
     inner_pad = " " * (indent + 2)
     items = list(payload.items())
@@ -179,7 +185,7 @@ def render_map(payload: dict[str, Any], indent: int = 0) -> str:
         return "{}"
     if len(items) == 1:
         key, value = items[0]
-        return "{%s: %s}" % (key, render_scalar(value))
+        return f"{{{key}: {render_scalar(value)}}}"
 
     lines = ["{"]
     for index, (key, value) in enumerate(items):
@@ -190,6 +196,7 @@ def render_map(payload: dict[str, Any], indent: int = 0) -> str:
 
 
 def render_node(record: NodeRecord) -> str:
+    """Render a validated node record as a Cypher MERGE statement."""
     labels = ":".join(record.labels)
     alias = alias_for(record.node_id)
     body = render_map(record.payload, indent=2)
@@ -197,6 +204,7 @@ def render_node(record: NodeRecord) -> str:
 
 
 def render_relationship(rel: dict[str, Any]) -> str:
+    """Render a validated relationship record as a Cypher MERGE statement."""
     src_alias = alias_for(str(rel["from"]))
     dst_alias = alias_for(str(rel["to"]))
     rel_type = str(rel["type"])
@@ -210,9 +218,10 @@ def render_relationship(rel: dict[str, Any]) -> str:
 
 
 def alias_for(node_id: str) -> str:
+    """Convert a canonical node ID into a safe Cypher variable alias."""
     base = node_id.split(":", 1)[1] if ":" in node_id else node_id
     chars: list[str] = []
-    for index, char in enumerate(base.lower()):
+    for char in base.lower():
         if char.isalnum():
             chars.append(char)
         else:
@@ -226,6 +235,7 @@ def alias_for(node_id: str) -> str:
 
 
 def render_document(metadata: dict[str, Any], records: list[NodeRecord], relationships: list[dict[str, Any]]) -> str:
+    """Render the full ontology payload into a deterministic Cypher document."""
     lines: list[str] = [
         "// Seed graph generated from ontology/model YAML.",
         f"// dataset_id: {metadata.get('dataset_id', 'unknown')}",
@@ -254,6 +264,7 @@ def render_document(metadata: dict[str, Any], records: list[NodeRecord], relatio
 
 
 def main() -> int:
+    """Generate the Cypher seed file from the ontology YAML input."""
     args = parse_args()
     input_path = Path(args.input)
     output_path = Path(args.output)

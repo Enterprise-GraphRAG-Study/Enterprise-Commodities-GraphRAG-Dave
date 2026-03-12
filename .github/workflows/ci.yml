@@ -30,8 +30,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Lint with Ruff
+        run: ruff check .
+
       - name: Compile Python scripts
-        run: python -m compileall scripts
+        run: python -m compileall scripts src
 
       - name: Validate repository target
         run: |

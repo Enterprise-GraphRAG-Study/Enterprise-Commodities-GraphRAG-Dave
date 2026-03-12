@@ -2,12 +2,11 @@ from __future__ import annotations
 
 import argparse
 import re
-from dataclasses import dataclass
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
 import yaml
-
 
 ENTITY_ALIASES: dict[str, tuple[str, ...]] = {
     "COM:GOLD": ("gold", "bullion"),
@@ -35,19 +34,18 @@ CLAIM_RULES: tuple[tuple[str, str, float], ...] = (
     (r"\b(increased demand|stronger demand|demand rose|supports? .* demand)\b", "demand_change", 0.76),
     (r"\b(reduced supply|tightened .* supply|supply restraint|production cut|supply cut)\b", "supply_change", 0.8),
     (r"\b(delays?|shipping disruption|freight stress|rerouting)\b", "shipment_delay", 0.77),
-    (r"\b(as|after|because|due to|amid|following|lifted by|pressured by|weighed on|supported by)\b", "price_explanation", 0.74),
+    (
+        r"\b(as|after|because|due to|amid|following|lifted by|pressured by|weighed on|supported by)\b",
+        "price_explanation",
+        0.74,
+    ),
 )
 
 SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
 
 
-@dataclass(frozen=True)
-class ExtractedClaim:
-    payload: dict[str, Any]
-    about_ids: list[str]
-
-
 def parse_args() -> argparse.Namespace:
+    """Parse command-line arguments for the curated claim extractor."""
     parser = argparse.ArgumentParser(description="Extract graph-ready claims from curated commodity documents.")
     parser.add_argument(
         "--corpus",
@@ -73,6 +71,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_yaml(path: Path) -> dict[str, Any]:
+    """Load a YAML file and require a mapping top level."""
     with path.open("r", encoding="utf-8") as handle:
         data = yaml.safe_load(handle)
     if not isinstance(data, dict):
@@ -81,11 +80,13 @@ def load_yaml(path: Path) -> dict[str, Any]:
 
 
 def split_sentences(body: str) -> list[str]:
+    """Split a text body into coarse sentence-like segments."""
     parts = [part.strip() for part in SENTENCE_SPLIT_RE.split(body.strip())]
     return [part for part in parts if part]
 
 
 def find_entities(sentence: str) -> list[str]:
+    """Return canonical entity IDs mentioned in a sentence using alias matching."""
     found: list[str] = []
     lowered = sentence.lower()
 
@@ -100,6 +101,7 @@ def find_entities(sentence: str) -> list[str]:
 
 
 def infer_claim(sentence: str) -> tuple[str, float] | None:
+    """Infer a claim type and baseline confidence from rule matches."""
     lowered = sentence.lower()
     for pattern, claim_type, confidence in CLAIM_RULES:
         if re.search(pattern, lowered):
@@ -108,11 +110,13 @@ def infer_claim(sentence: str) -> tuple[str, float] | None:
 
 
 def slugify(text: str) -> str:
+    """Convert free text into a compact uppercase identifier fragment."""
     slug = re.sub(r"[^A-Z0-9]+", "_", text.upper()).strip("_")
     return slug[:48] or "CLAIM"
 
 
 def extract_claims(corpus: dict[str, Any]) -> dict[str, Any]:
+    """Extract Document and Claim records plus provenance edges from a curated corpus."""
     documents = corpus.get("documents")
     if not isinstance(documents, list):
         raise ValueError("Corpus YAML must contain a `documents` list.")
@@ -182,6 +186,7 @@ def extract_claims(corpus: dict[str, Any]) -> dict[str, Any]:
 
 
 def merge_graphs(base: dict[str, Any], extracted: dict[str, Any]) -> dict[str, Any]:
+    """Merge extracted graph fragments into the base ontology dataset."""
     merged = {
         "metadata": dict(base.get("metadata", {})),
         "nodes": {label: [dict(item) for item in entries] for label, entries in base.get("nodes", {}).items()},
@@ -217,6 +222,7 @@ def merge_graphs(base: dict[str, Any], extracted: dict[str, Any]) -> dict[str, A
 
 
 def relationship_key(rel: dict[str, Any]) -> tuple[Any, ...]:
+    """Build a hashable identity for relationship de-duplication."""
     props = rel.get("properties")
     if isinstance(props, dict):
         prop_items = tuple(sorted(props.items()))
@@ -226,12 +232,27 @@ def relationship_key(rel: dict[str, Any]) -> tuple[Any, ...]:
 
 
 def write_yaml(path: Path, payload: dict[str, Any]) -> None:
+    """Write a YAML payload to disk with stable key ordering preserved."""
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
-        yaml.safe_dump(payload, handle, sort_keys=False, allow_unicode=False)
+        yaml.safe_dump(serialize_yaml(payload), handle, sort_keys=False, allow_unicode=False)
+
+
+def serialize_yaml(value: Any) -> Any:
+    """Convert Python runtime objects into plain YAML-safe scalar structures."""
+    if isinstance(value, datetime):
+        return value.isoformat().replace("+00:00", "Z")
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {key: serialize_yaml(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [serialize_yaml(item) for item in value]
+    return value
 
 
 def main() -> int:
+    """Run extraction, emit the claim pack, and write the merged dataset."""
     args = parse_args()
     corpus = load_yaml(Path(args.corpus))
     base = load_yaml(Path(args.base))
